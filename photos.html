@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.4/css/lightgallery.min.css"
+      integrity="sha512-Szyqrwc8kFyWMllOpTgYCMaNNm/Kl8Fz0jJoksPZAWUqhE60VRHiLLJVcIQKi+bOMffjvrPCxtwfL+/3NPh/ag=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.4/css/lg-relative-caption.min.css"
+      integrity="sha512-Tmsr0HjMvS/ReZR65bmX26m60EJjZw5AAKpnkPouiNfRqwIficKDk6x6/B3I8XdPfhTAVhGX7MkLrqZTGUn4og=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.4/css/lg-fullscreen.min.css"
+      integrity="sha512-JlgW3xkdBcsdFiSfFk5Cfj3sTgo3hA63/lPmZ4SXJegICSLcH43BuwDNlC9fqoUy2h3Tma8Eo48xlZ5XMjM+aQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.4/css/lg-thumbnail.min.css"
+      integrity="sha512-GRxDpj/bx6/I4y6h2LE5rbGaqRcbTu4dYhaTewlS8Nh9hm/akYprvOTZD7GR+FRCALiKfe8u1gjvWEEGEtoR6g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Videos</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="w-full flex items-center justify-between px-4 lg:px-[83px] pt-[20px] sm:pt-[35px] absolute"
+    >
+      <div class="flex items-center">
+        <button
+          class="w-6 h-6 bg-[url('./assets/img/berger-menu.svg')] mr-4 lg:mr-[55px]"
+        ></button>
+
+        <div class="flex items-center">
+          <!--  Custome drop down.. -->
+          <div class="dropdown relative">
+            <div
+              class="dropdown-select flex items-center cursor-pointer transition duration-500 ease-in-out"
+            >
+              <span
+                class="selected text-lg text-white uppercase font-normal mr-[12px]"
+                >EN</span
+              >
+              <span class="ml-1"
+                ><svg
+                  width="11"
+                  height="6"
+                  viewBox="0 0 11 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.5 6L0.73686 0.75L10.2631 0.75L5.5 6Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            <ul
+              class="opacity-0 pointer-events-none w-40 absolute top-6 z-50 dropdown-menu bg-white border solid border-[#e2e2e2] mt-2 rounded-md shadow-2xl scale-90 transition duration-500 ease-in-out"
+            >
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2 rounded-md"
+              >
+                EN
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2 rounded-md"
+              >
+                FR
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2"
+              >
+                DU
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2"
+              >
+                AR
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="md:flex flex-col items-center w-[100px] md:w-[275px]">
+        <img src="./assets/img/app-logo.svg" alt="app-logo" class="" />
+        <span class="hidden md:inline-block text-sm text-white font-normal"
+          >Assemblies of God World Mission</span
+        >
+      </div>
+      <div class="hidden md:flex items-center">
+        <!-- Search Bar -->
+        <div class="relative cursor-pointer rounded-full mr-4 search__bar">
+          <span
+            class="search__icon inline-block absolute top-2 left-2 w-8 h-8 bg-center bg-[url('./assets/img/search.svg')] bg-no-repeat"
+          ></span>
+          <input
+            id="my__search"
+            class="h-full w-full outline-none border-none pl-12 pr-9 text-lg text-white font-semibold bg-transparent rounded-lg"
+            type="text"
+            placeholder="Search"
+          />
+          <div class="clear absolute right-2 top-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#fff"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- End Search Bar -->
+        <button
+          class="w-[211px] h-[56px] text-center rounded-full text-lg text-white border-2 solid border-white font-semibold uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out"
+        >
+          Are you called?
+        </button>
+      </div>
+    </nav>
+
+    <header
+      class="pt-[70px] h-full px-4 md:px-[83px] pb-[150px] md:pb-[180px] bg-[url('./assets/img/stories/heror-poster.png')] bg-no-repeat bg-cover bg-center"
+    >
+      <div class="flex flex-col justify-center items-center md:pt-[115px]">
+        <h2 class="text-4xl md:text-[64px] text-white font-normal md:w-[430px]">
+          Asia Pacific
+        </h2>
+        <div
+          class="flex items-center mt-9 md:mt-[60px] border-2 solid border-white w-full h-[45px] md:h-[56px] rounded-full md:w-[753px] relative"
+        >
+          <span class="pl-4 md:pl-7 mt-1">
+            <svg
+              class="w-[15px] h-[15px] md:w-[24px] md:h-[24px]"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10ZM10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20C12.0916 20 14.0333 19.3578 15.6386 18.2599L21.1893 23.8107L23.3107 21.6893L17.8354 16.2141C19.1905 14.5076 20 12.3484 20 10C20 4.47715 15.5228 0 10 0Z"
+                fill="white"
+              />
+            </svg>
+          </span>
+          <input
+            class="h-full w-[calc(100%-120px)] md:w-[calc(100%-290px)] pl-2 md:pl-[23px] rounded-full bg-transparent text-base sm:text-lg text-white font-normal outline-none placeholder:text-xs sm:placeholder:text-lg placeholder:text-white"
+            placeholder="Begin your search here"
+          />
+
+          <button
+            class="w-[100px] md:w-[235px] h-full bg-white text-sm md:text-lg font-medium rounded-full uppercase absolute -right-1"
+          >
+            Search
+          </button>
+        </div>
+        <div class="mt-[60px]">
+          <ul
+            class="tabs flex items-center justify-center md:justify-between flex-wrap md:flex-row h-[65px] md:h-auto"
+          >
+            <li
+              class="list-none text-sm sm:text-lg lg:text-[22px] text-[#aaabab] font-bold mr-3 md:mr-[40px] cursor-pointer"
+            >
+              All
+            </li>
+            <li
+              class="text-sm sm:text-lg lg:text-[22px] text-[#aaabab] font-bold list-none mr-3 md:mr-[40px] cursor-pointer"
+            >
+              Asia Pacific
+            </li>
+            <li
+              class="text-sm sm:text-lg lg:text-[22px] text-[#aaabab] font-bold list-none mr-3 md:mr-[40px] cursor-pointer"
+            >
+              Africa
+            </li>
+            <li
+              class="text-sm sm:text-lg lg:text-[22px] text-[#aaabab] font-bold list-none mr-3 md:mr-[40px] cursor-pointer"
+            >
+              Eurasia
+            </li>
+            <li
+              class="text-sm sm:text-lg lg:text-[22px] text-[#aaabab] font-bold list-none mr-3 md:mr-[40px] cursor-pointer"
+            >
+              Latin America
+            </li>
+            <li
+              class="text-sm sm:text-lg lg:text-[22px] text-[#aaabab] font-bold list-none cursor-pointer"
+            >
+              Northern Asia
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="w-full px-4 xl:px-40 -translate-y-[105px]">
+      <!-- //container -->
+      <div class="content_wrapper w-full">
+        <!-- content -->
+        <div
+          class="w-full stories hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5"
+          id="gallery"
+        >
+          <!-- <a
+            class="gallery-item"
+            data-src="./assets/img/photos/pic-1.png"
+            data-sub-html=`<div class='lightGallery-captions absolute right-2 top-6'>
+              <h4 class="text-4xl text-whtie font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore deserunt omnis, eius exercitationem, obcaecati itaque reiciendis, ab quae iste velit dolorem illum facere deleniti architecto quidem impedit rem similique eos?</h4>
+            </div>`
+          >
+            <img class="img-fluid" src="./assets/img/photos/pic-1.png" />
+          </a> -->
+
+          <a
+            href="#"
+            class="flex flex-col items-center sm:items-start"
+            data-sub-html="#caption1"
+          >
+            <div class="w-[290px] sm:w-full h-auto">
+              <img src="./assets/img/photos/pic-1.png" alt="" />
+            </div>
+          </a>
+
+          <a
+            href="#"
+            data-sub-html="#caption2"
+            class="flex flex-col items-center sm:items-start"
+          >
+            <div class="w-[290px] sm:w-full h-auto">
+              <img src="./assets/img/photos/pic-2.png" alt="" />
+            </div>
+          </a>
+
+          <a
+            href="#"
+            data-sub-html="#caption3"
+            class="flex flex-col items-center sm:items-start"
+          >
+            <div class="w-[290px] sm:w-full h-auto">
+              <img src="./assets/img/photos/pic-3.png" alt="" />
+            </div>
+          </a>
+
+          <a href="#" class="w-full flex flex-col items-center sm:items-start">
+            <div class="w-[290px] sm:w-full h-auto">
+              <img src="./assets/img/photos/pic-4.png" alt="" />
+            </div>
+          </a>
+
+          <a href="#" class="w-full flex flex-col items-center sm:items-start">
+            <div class="w-[290px] sm:w-full h-auto mb-2 sm:mb-6">
+              <img src="./assets/img/photos/pic-5.png" alt="" />
+            </div>
+          </a>
+          <a href="#" class="w-full flex flex-col items-center sm:items-start">
+            <div class="w-[290px] sm:w-full h-auto mb-2 sm:mb-6">
+              <img src="./assets/img/photos/pic-6.png" alt="" />
+            </div>
+          </a>
+          <a href="#" class="w-full flex flex-col items-center sm:items-start">
+            <div class="w-[290px] sm:w-full h-auto">
+              <img src="./assets/img/photos/pic-7.png" alt="" />
+            </div>
+          </a>
+          <a href="#" class="w-full flex flex-col items-center sm:items-start">
+            <div class="w-[290px] sm:w-full h-auto">
+              <img src="./assets/img/photos/pic-8.png" alt="" />
+            </div>
+          </a>
+          <a href="#" class="w-full flex flex-col items-center sm:items-start">
+            <div class="w-[290px] sm:w-full h-auto">
+              <img src="./assets/img/photos/pic-9.png" alt="" />
+            </div>
+          </a>
+          <a href="#" class="w-full flex flex-col items-center sm:items-start">
+            <div class="w-[290px] sm:w-full h-auto">
+              <img src="./assets/img/photos/pic-10.png" alt="" />
+            </div>
+          </a>
+          <a href="#" class="w-full flex flex-col items-center sm:items-start">
+            <div class="w-[290px] sm:w-full h-auto">
+              <img src="./assets/img/photos/pic-11.png" alt="" />
+            </div>
+          </a>
+          <a href="#" class="w-full flex flex-col items-center sm:items-start">
+            <div class="w-[290px] sm:w-full h-auto">
+              <img src="./assets/img/photos/pic-12.png" alt="" />
+            </div>
+          </a>
+          <a href="#" class="w-full flex flex-col items-center sm:items-start">
+            <div class="w-[290px] sm:w-full h-auto">
+              <img src="./assets/img/photos/pic-13.png" alt="" />
+            </div>
+          </a>
+          <a href="#" class="w-full flex flex-col items-center sm:items-start">
+            <div class="w-[290px] sm:w-full h-auto">
+              <img src="./assets/img/photos/pic-14.png" alt="" />
+            </div>
+          </a>
+          <a href="#" class="w-full flex flex-col items-center sm:items-start">
+            <div class="w-[290px] sm:w-full h-auto">
+              <img src="./assets/img/photos/pic-15.png" alt="" />
+            </div>
+          </a>
+        </div>
+        <div id="caption1" style="display: none">
+          <div
+            class="absolute positon__center flex flex-col md:flex-row w-full justify-center px-4 md:px-0 mt-4 sm:mt-0"
+          >
+            <div class="w-full h-[200px] md:w-[512px] md:h-[512px] mt-4 mb-4">
+              <img
+                src="./assets/img/photos/pic-1.png"
+                alt="Picture Logo"
+                class="h-full w-full object-contain"
+              />
+            </div>
+            <div class="flex flex-col items-start md:ml-[30px] xl:ml-[50px]">
+              <h4
+                class="text-lg sm:text-xl md:text-2xl xl:text-4xl text-white font-normal gallery__title"
+              >
+                Smiling boy
+              </h4>
+              <span class="text-base xl:text-lg text-white font-normal"
+                >Smiling boy</span
+              >
+              <button
+                class="hidden sm:block w-full lg:w-[314px] h-[56px] rounded-full border-2 solid border-white text-sm sm:text-base xl:text-lg font-normal text-white mt-[20px] mb-[20px] md:mb-[40px] hover:bg-white hover:text-black uppercase"
+              >
+                Login to Download Image
+              </button>
+              <div class="mt-4 text-left">
+                <h5
+                  class="text-base xl:text-lg text-white font-normal text-white uppercase"
+                >
+                  USAGE RIGHTS & CITATION:
+                </h5>
+                <p class="text-lg font-normal text-white">
+                  You are free to share and adapt AGWM photos. You must
+                  <br class="hidden md:inline" />
+                  give appropriate credit to AGWM in a reasonable manner,
+                  <br class="hidden md:inline" />
+                  but not in a way that suggests the organization endorses you
+                  <br class="hidden md:inline" />
+                  or your use. You may not use the material for commercial
+                  <br class="hidden md:inline" />
+                  purposes. Read more
+                </p>
+                <button
+                  class="block sm:hidden w-full lg:w-[314px] h-[56px] rounded-full border-2 solid border-white text-sm sm:text-base xl:text-lg font-normal text-white mt-[20px] mb-[40px] hover:bg-white hover:text-black uppercase"
+                >
+                  Login to Download Image
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="caption2" style="display: none">
+          <div
+            class="absolute positon__center flex flex-col md:flex-row w-full justify-center px-4 md:px-0 mt-4 sm:mt-0"
+          >
+            <div class="w-full h-[200px] md:w-[512px] md:h-[512px] mt-4 mb-4">
+              <img
+                src="./assets/img/photos/pic-2.png"
+                alt="Picture Logo"
+                class="h-full w-full object-contain"
+              />
+            </div>
+            <div class="flex flex-col items-start md:ml-[30px] xl:ml-[50px]">
+              <h4
+                class="text-lg sm:text-xl md:text-2xl xl:text-4xl text-white font-normal gallery__title"
+              >
+                Smiling boy
+              </h4>
+              <span class="text-base xl:text-lg text-white font-normal"
+                >Smiling boy</span
+              >
+              <button
+                class="hidden sm:block w-full lg:w-[314px] h-[56px] rounded-full border-2 solid border-white text-sm sm:text-base xl:text-lg font-normal text-white mt-[20px] mb-[20px] md:mb-[40px] hover:bg-white hover:text-black uppercase"
+              >
+                Login to Download Image
+              </button>
+              <div class="mt-4 text-left">
+                <h5
+                  class="text-base xl:text-lg text-white font-normal text-white uppercase"
+                >
+                  USAGE RIGHTS & CITATION:
+                </h5>
+                <p class="text-lg font-normal text-white">
+                  You are free to share and adapt AGWM photos. You must
+                  <br class="hidden md:inline" />
+                  give appropriate credit to AGWM in a reasonable manner,
+                  <br class="hidden md:inline" />
+                  but not in a way that suggests the organization endorses you
+                  <br class="hidden md:inline" />
+                  or your use. You may not use the material for commercial
+                  <br class="hidden md:inline" />
+                  purposes. Read more
+                </p>
+                <button
+                  class="block sm:hidden w-full lg:w-[314px] h-[56px] rounded-full border-2 solid border-white text-sm sm:text-base xl:text-lg font-normal text-white mt-[20px] mb-[40px] hover:bg-white hover:text-black uppercase"
+                >
+                  Login to Download Image
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="caption3" style="display: none">
+          <div
+            class="absolute positon__center flex flex-col md:flex-row w-full justify-center px-4 md:px-0 mt-4 sm:mt-0"
+          >
+            <div class="w-full h-[200px] md:w-[512px] md:h-[512px] mt-4 mb-4">
+              <img
+                src="./assets/img/photos/pic-3.png"
+                alt="Picture Logo"
+                class="h-full w-full object-contain"
+              />
+            </div>
+            <div class="flex flex-col items-start md:ml-[30px] xl:ml-[50px]">
+              <h4
+                class="text-lg sm:text-xl md:text-2xl xl:text-4xl text-white font-normal gallery__title"
+              >
+                Smiling boy
+              </h4>
+              <span class="text-base xl:text-lg text-white font-normal"
+                >Smiling boy</span
+              >
+              <button
+                class="hidden sm:block w-full lg:w-[314px] h-[56px] rounded-full border-2 solid border-white text-sm sm:text-base xl:text-lg font-normal text-white mt-[20px] mb-[20px] md:mb-[40px] hover:bg-white hover:text-black uppercase"
+              >
+                Login to Download Image
+              </button>
+              <div class="mt-4 text-left">
+                <h5
+                  class="text-base xl:text-lg text-white font-normal text-white uppercase"
+                >
+                  USAGE RIGHTS & CITATION:
+                </h5>
+                <p class="text-lg font-normal text-white">
+                  You are free to share and adapt AGWM photos. You must
+                  <br class="hidden md:inline" />
+                  give appropriate credit to AGWM in a reasonable manner,
+                  <br class="hidden md:inline" />
+                  but not in a way that suggests the organization endorses you
+                  <br class="hidden md:inline" />
+                  or your use. You may not use the material for commercial
+                  <br class="hidden md:inline" />
+                  purposes. Read more
+                </p>
+                <button
+                  class="block sm:hidden w-full lg:w-[314px] h-[56px] rounded-full border-2 solid border-white text-sm sm:text-base xl:text-lg font-normal text-white mt-[20px] mb-[40px] hover:bg-white hover:text-black uppercase"
+                >
+                  Login to Download Image
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stories hidden flex flex-wrap text-4xl text-white">
+          story number two
+        </div>
+        <div class="stories hidden flex flex-wrap text-4xl text-white">
+          story number three
+        </div>
+        <div class="stories hidden flex flex-wrap text-4xl text-white">
+          story number Four
+        </div>
+        <div class="stories hidden flex flex-wrap text-4xl text-white">
+          story number fifth
+        </div>
+        <div class="stories hidden flex flex-wrap text-4xl text-white">
+          story number six
+        </div>
+        <div class="stories hidden flex flex-wrap text-4xl text-white">
+          story number seven
+        </div>
+        <div class="stories hidden flex flex-wrap text-4xl text-white">
+          story number eight
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="pt-6 sm:pt-16 border-t solid border-[#f0f0f0]">
+      <div
+        class="grid sm:grid-cols-2 md:grid-cols-3 px-4 lg:px-[75px] mb-4 md:pb-9"
+      >
+        <div
+          class="col-span-1 flex flex-col sm:border-r solid border-[#f0f0f0] mb-4 md:mb-0"
+        >
+          <div class="mb-4 sm:mb-7">
+            <img
+              src="./assets/img/colored-logo.svg"
+              alt="App-Logo"
+              class="h-[30px] sm:h-auto"
+            />
+          </div>
+
+          <p class="text-[#3D3D3D] font-normal text-sm">
+            1445 N. Boonville Avenue Springfield, MO 65802-1894 <br />
+            Phone: 1-417-862-3420
+          </p>
+          <button
+            class="w-[150px] sm:w-[205px] h-[40px] sm:h-[56px] text-center rounded-full text-xs sm:text-lg text-[#8B3C3A] border-2 solid border-[#8B3C3A] font-semibold uppercase hover:bg-[#8B3C3A] hover:text-white transition duration-500 ease-in-out my-3 sm:my-6"
+          >
+            Are you called?
+          </button>
+          <p class="text-[10px] text-[#3D3D3D] font-normal">
+            © 2021 ASSEMBLIES OF GOD WORLD MISSIONS
+          </p>
+        </div>
+        <div
+          class="md:col-span-1 flex sm:justify-center md:border-r solid border-[#f0f0f0] my-1 md:my-0"
+        >
+          <ul>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Home</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">pray</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Give</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Go</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">About Us</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Resources</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]"
+                >Privacy & Permissions</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="flex flex-col w-full md:w-auto md:col-span-1 mx-auto my-2 sm:my-0"
+        >
+          <h6 class="text-sm font-normal text-[#3D3D3D] mb-3">Connect</h6>
+          <div class="flex items-center">
+            <div
+              class="bg-[#8B3C3A] rounded-md w-8 h-8 mr-4 flex justify-center items-center hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/facebook.svg" alt="facebook" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 mr-4 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/viemo.svg" alt="viemo" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 mr-4 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/youtube.svg" alt="Youtube" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/insta.svg" alt="Instagram" />
+            </div>
+          </div>
+          <button
+            class="w-[150px] sm:w-[205px] h-[40px] sm:h-[56px] text-center rounded-full text-sm sm:text-lg text-[#8B3C3A] border-2 solid border-[#8B3C3A] font-semibold uppercase hover:bg-[#8B3C3A] hover:text-white transition duration-500 ease-in-out mt-4 sm:my-6"
+          >
+            Get in Touch
+          </button>
+        </div>
+      </div>
+      <div class="w-full">
+        <img src="./assets/img/footer-logos.svg" alt="Logos" class="w-full" />
+      </div>
+    </footer>
+
+    <!-- lightgallery plugins -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.4/lightgallery.min.js"
+      integrity="sha512-OXh5TOMI5Ai7h7xS7j7yUYHk1WRtFUkfclpRsCgHv6HDzPi901GitnGEXYuuQ4/JzRZ5HBAZpvl8KD00sIMFPw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.4/plugins/relativeCaption/lg-relative-caption.min.js"
+      integrity="sha512-yARdkdQPSLSXDVF3eaRF9wuQ0CgrIjcHJsYHeG+Pv21DIyvJQx9HvlZLCa6HZAJnZvtsMUg3jz3lg/nEdO0w9A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.4/plugins/fullscreen/lg-fullscreen.min.js"
+      integrity="sha512-nQjTCN6CbdQhhDk5NGhRpH9zsawOBN8NWEk29cQlCwtAizyYNBXfbinyfbr2Zb/llFYop6HJkS2gC4pzmVzK7g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.4/plugins/thumbnail/lg-thumbnail.min.js"
+      integrity="sha512-krn28flCpCCgAZNwZS5Nz57WjM2HQ84RqeTJ6NwqJdx3Kidrr1JqK0Qfhip8Hw+qOQMH6GANUrTJbAV4Ygqi5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- JsCode -->
+    <script type="text/javascript">
+      lightGallery(document.getElementById("gallery"));
+
+      // Grap all ul > li
+      const tabs = document.querySelectorAll(".tabs li");
+      // Grap all stories
+      const stories = document.querySelectorAll(".stories");
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+          // Remove Active class
+          tabs.forEach((tab) => tab.classList.remove("active_story"));
+          // Add Active Class
+          tab.classList.add("active_story");
+          //  Hide previous Stories
+          stories.forEach((c) => c.classList.remove("show__Stroy"));
+          // Show Content According To Tab Selected
+          stories[index].classList.add("show__Stroy");
+        });
+      });
+      // When Page Realod Put Active On First Fab
+      tabs[0].click();
+
+      //  Search Icon
+      const searchBar = document.querySelector(".search__bar");
+      const searchIcon = document.querySelector(".search__icon");
+      const mySearch = document.querySelector("#my__search");
+      const clear = document.querySelector(".clear");
+
+      searchIcon.addEventListener("click", () => {
+        searchBar.classList.toggle("active");
+      });
+
+      clear.addEventListener("click", () => {
+        mySearch.value = "";
+        searchBar.classList.toggle("active");
+      });
+
+      // Toggle Language menu
+      const LangMenu = document.querySelector(".dropdown-select");
+      const dropDown = document.querySelector(".dropdown-menu");
+      const listText = document.querySelector(".selected");
+      const dropDownItem = document.querySelectorAll(".item");
+
+      LangMenu.addEventListener("click", () => {
+        LangMenu.classList.toggle("active");
+        dropDown.classList.toggle("active");
+        dropDownItem.forEach((item) => {
+          if (item.innerText === listText.innerText) {
+            item.classList.add("active-lang");
+          } else {
+            item.classList.remove("active-lang");
+          }
+        });
+      });
+
+      for (item of dropDownItem) {
+        item.addEventListener("click", showItem);
+      }
+      function showItem() {
+        event.preventDefault();
+
+        listText.innerHTML = this.textContent;
+        dropDown.classList.toggle("active");
+        LangMenu.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

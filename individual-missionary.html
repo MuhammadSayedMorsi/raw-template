@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <!-- TailwindCss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+            backgroundImage: {
+              "burger-menu": "url('./assets/img/berger-menu.svg')",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+
+    <nav
+      class="w-full flex items-center justify-between px-4 lg:px-[83px] pt-[20px] sm:pt-[35px] absolute"
+    >
+      <div class="flex items-center">
+        <button
+          class="w-6 h-6 bg-[url('./assets/img/berger-menu.svg')] mr-4 lg:mr-[47px]"
+        ></button>
+
+        <div class="">
+          <!--  Custome drop down.. -->
+          <div class="dropdown relative">
+            <div
+              class="dropdown-select flex items-center cursor-pointer transition duration-500 ease-in-out"
+            >
+              <span
+                class="selected text-lg text-white uppercase font-normal mr-[12px]"
+                >EN</span
+              >
+              <span class="ml-1"
+                ><svg
+                  width="11"
+                  height="6"
+                  viewBox="0 0 11 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.5 6L0.73686 0.75L10.2631 0.75L5.5 6Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            <ul
+              class="opacity-0 pointer-events-none w-40 absolute top-6 z-50 dropdown-menu bg-white border solid border-[#e2e2e2] mt-2 rounded-md shadow-2xl scale-90 transition duration-500 ease-in-out"
+            >
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2 rounded-md"
+              >
+                EN
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2 rounded-md"
+              >
+                FR
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2"
+              >
+                DU
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2"
+              >
+                AR
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="md:flex flex-col items-center w-[100px] md:w-[275px] xl:ml-[120px]"
+      >
+        <img src="./assets/img/app-logo.svg" alt="app-logo" class="" />
+        <span class="hidden md:inline-block text-sm text-white font-normal"
+          >Assemblies of God World Mission</span
+        >
+      </div>
+      <div class="hidden md:flex items-center relative">
+        <!-- Search Bar -->
+        <div class="relative cursor-pointer rounded-full mr-4 search__bar">
+          <span
+            class="search__icon inline-block absolute top-2 left-2 w-8 h-8 bg-center bg-[url('./assets/img/search.svg')] bg-no-repeat"
+          ></span>
+          <input
+            id="my__search"
+            class="h-full w-full outline-none border-none pl-12 pr-9 text-lg text-white font-semibold bg-transparent rounded-lg"
+            type="text"
+            placeholder="Search"
+          />
+          <div class="clear absolute right-2 top-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#fff"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- End Search Bar -->
+        <button
+          class="w-[211px] h-[56px] text-center rounded-full text-lg text-white border-2 solid border-white font-semibold uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out"
+        >
+          Are you called?
+        </button>
+      </div>
+    </nav>
+
+    <header
+      class="w-full md:h-[972px] py-[100px] md:py-0 px-4 lg:pl-[82px] xl:pl-[100px] bg-[url('./assets/img/individual-missionary/hero.svg')] bg-no-repeat bg-cover bg-center flex items-start justify-center flex-col"
+    >
+      <div
+        class="flex items-center mb-[20px] md:mb-[60px] flex-col md:flex-row"
+      >
+        <div class="md:mr-[30px] lg:mr-[60px]">
+          <img
+            src="./assets/img/individual-missionary/hero-small.png"
+            alt="Icon"
+          />
+        </div>
+
+        <div class="w-full md:w-auto mt-6 md:mt-0">
+          <h2
+            class="text-[36px] md:text-[48px] xl:text-[64px] text-white font-normal"
+          >
+            Jeffery & Juana Danford
+          </h2>
+          <p class="text-[18px] lg:text-[32px] text-white font-normal">
+            SERVING IN CHILE, LATIN AMERICA CARIBBEAN
+          </p>
+
+          <button
+            class="w-[175px] h-[56px] bg-transparent border-2 solid border-white text-lg text-white font-semibold rounded-full mt-6 md:mt-8 hover:bg-white hover:text-black transition duration-500 ease-in-out"
+          >
+            Give
+          </button>
+        </div>
+      </div>
+      <div class="flex items-center flex-col md:flex-row">
+        <div class="w-[315px] h-[160px] rounded-2xl hidden md:block">
+          <img
+            src="./assets/img/individual-missionary/map.svg"
+            alt="map icon"
+            class="w-full h-full"
+          />
+        </div>
+        <div class="">
+          <div class="w-full md:w-auto">
+            <p class="text-lg sm:text-2xl font-semibold text-white mb-1">
+              Account #2974764
+            </p>
+            <span class="text-lg sm:text-2xl font-light text-white block mb-1">
+              jldan92@hotmail.com
+            </span>
+            <span
+              class="text-lg sm:text-2xl font-light text-white block mb-1 border-b solid border-white"
+            >
+              www.Praywiththedanfords.com
+            </span>
+            <span class="text-lg sm:text-2xl font-light text-white block">
+              Home: 935-355-6652
+            </span>
+          </div>
+          <div class="flex items-center mt-[40px]">
+            <a
+              href="#"
+              class="mr-5 hover:scale-105 transition duration-500 ease-in-out"
+            >
+              <svg
+                width="56"
+                height="56"
+                viewBox="0 0 56 56"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="56" height="56" rx="6" fill="white" />
+                <path
+                  d="M35.4992 13.0062L31.6089 13C27.2383 13 24.4138 15.8978 24.4138 20.383V23.7871H20.5023C20.1643 23.7871 19.8906 24.0611 19.8906 24.3991V29.3313C19.8906 29.6693 20.1646 29.943 20.5023 29.943H24.4138V42.3883C24.4138 42.7263 24.6876 43 25.0256 43H30.129C30.467 43 30.7407 42.726 30.7407 42.3883V29.943H35.3141C35.6521 29.943 35.9259 29.6693 35.9259 29.3313L35.9277 24.3991C35.9277 24.2369 35.8631 24.0814 35.7486 23.9666C35.634 23.8517 35.478 23.7871 35.3157 23.7871H30.7407V20.9014C30.7407 19.5145 31.0712 18.8104 32.8779 18.8104L35.4986 18.8094C35.8363 18.8094 36.11 18.5354 36.11 18.1977V13.618C36.11 13.2806 35.8366 13.0069 35.4992 13.0062Z"
+                  fill="black"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="hover:scale-105 transition duration-500 ease-in-out"
+            >
+              <svg
+                width="56"
+                height="56"
+                viewBox="0 0 56 56"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="56" height="56" rx="6" fill="white" />
+                <path
+                  d="M28.0004 13.0154C21.4468 13.0154 15.2235 12.4329 12.8465 18.5286C11.8646 21.0463 12.0072 24.3159 12.0072 28.9977C12.0072 33.106 11.8755 36.9673 12.8465 39.4651C15.2181 45.5644 21.4919 44.9801 27.9968 44.9801C34.2724 44.9801 40.743 45.6329 43.1489 39.4651C44.1325 36.9222 43.9882 33.7012 43.9882 28.9977C43.9882 22.7541 44.3329 18.7234 41.3025 15.6972C38.2341 12.6313 34.0847 13.0154 27.9932 13.0154H28.0004ZM26.5673 15.8956C40.2376 15.8739 41.9775 14.3554 41.0173 35.4506C40.6762 42.9115 34.9908 42.0927 28.0022 42.0927C15.2596 42.0927 14.8932 41.7284 14.8932 28.9905C14.8932 16.1048 15.904 15.9028 26.5673 15.892V15.8956ZM36.5375 18.5485C35.4781 18.5485 34.6189 19.4069 34.6189 20.4655C34.6189 21.5242 35.4781 22.3826 36.5375 22.3826C37.597 22.3826 38.4562 21.5242 38.4562 20.4655C38.4562 19.4069 37.597 18.5485 36.5375 18.5485ZM28.0004 20.7902C23.4647 20.7902 19.7881 24.4656 19.7881 28.9977C19.7881 33.5299 23.4647 37.2035 28.0004 37.2035C32.5361 37.2035 36.2109 33.5299 36.2109 28.9977C36.2109 24.4656 32.5361 20.7902 28.0004 20.7902ZM28.0004 23.6703C35.0485 23.6703 35.0575 34.3252 28.0004 34.3252C20.9541 34.3252 20.9433 23.6703 28.0004 23.6703Z"
+                  fill="black"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="w-full pt-6 lg:pt-[90px]">
+      <!-- About -->
+      <section
+        class="px-4 sm:px-[100px] xl:px-[300px] mb-[60px] lg:mb-[160px] text-center"
+      >
+        <h3
+          class="text-[32px] sm:text-[48px] xl:text-[64px] text-black font-normal"
+        >
+          About
+        </h3>
+
+        <p
+          class="text-lg lg:text-2xl font-normal text-[#3D3D3D] mt-[30px] mb-[50px]"
+        >
+          Jeffery was born in Huntsville, Texas and Juana is from Houston,
+          Texas. They both met while they both were serving in Chi Alpha as
+          small group leaders. Juana was agnostic who found the love of God and
+          His grace over her life -- she gave her life to God and gave Him her
+          heart. She spent 7 years of both her college career and post college
+          in leading more girls like her to Christ.
+        </p>
+
+        <p class="text-lg lg:text-2xl font-normal text-[#3D3D3D]">
+          She completed the Chi Alpha internship and served on staff. After
+          Juana went to Santiago, Chile in 2016/2017, she got her calling from
+          God to serve in overseas missions. Jeffery came to know Christ his
+          freshman year of college at Sam Houston State University. Two years
+          after his conversion, he became a small group leader with Chi Alpha,
+          and had the honor and privilege of leading several young men to
+          Christ. After Graduating college, he joined Chi Alpha as a staff
+          member, and worked as such for five years. It was during a Christian
+          Conference that he felt God call him to missions.
+        </p>
+      </section>
+
+      <section
+        class="flex items-center justify-center flex-col lg:px-[60px] mx-auto mb-[60px] lg:mb-[160px]"
+      >
+        <div
+          class="w-full h-[500px] lg:h-[600px] bg-[url('./assets/img/individual-missionary/fish-man.png')] bg-center bg-cover lg:rounded-2xl flex justify-center flex-col pl-4 lg:pl-[120px] pr-4"
+        >
+          <h3
+            class="text-[36px] xl:text-[64px] text-white font-normal mb-2 lg:mb-[40px]"
+          >
+            Giving initiative
+          </h3>
+          <p class="text-white text-lg sm:text-xl lg:text-3xl">
+            Your generous donations help vital Assemblies of God ministries and
+            missionaries share the love of Jesus in cities and hometowns across
+            the country, and throughout the world.
+          </p>
+
+          <div class="flex items-center mt-4">
+            <p
+              class="text-white text-[18px] sm:text-[24px] xl:text-[48px] font-normal"
+            >
+              Goal - $20.000
+            </p>
+            <p
+              class="text-[16px] sm:text-[18px] xl:text-[32px] text-white font-normal ml-2"
+            >
+              / 15. 339 was already donated
+            </p>
+          </div>
+          <div class="w-full mt-3 pr-[160px]">
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 962 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                width="962"
+                height="11"
+                rx="5.5"
+                fill="white"
+                fill-opacity="0.24"
+              />
+              <rect width="744" height="11" rx="5.5" fill="white" />
+            </svg>
+          </div>
+          <button
+            class="text-base md:text-lg text-black font-normal w-[230px] md:w-[268px] h-[56px] rounded-full bg-white mt-[38px] uppercase"
+          >
+            Start your gift today
+          </button>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="pt-6 sm:pt-16 border-t solid border-[#f0f0f0]">
+      <div
+        class="grid sm:grid-cols-2 md:grid-cols-3 px-4 lg:px-[75px] mb-4 md:pb-9"
+      >
+        <div
+          class="col-span-1 flex flex-col sm:border-r solid border-[#f0f0f0] mb-4 md:mb-0"
+        >
+          <div class="mb-4 sm:mb-7">
+            <img
+              src="./assets/img/colored-logo.svg"
+              alt="App-Logo"
+              class="h-[30px] sm:h-auto"
+            />
+          </div>
+
+          <p class="text-[#3D3D3D] font-normal text-sm">
+            1445 N. Boonville Avenue Springfield, MO 65802-1894 <br />
+            Phone: 1-417-862-3420
+          </p>
+          <button
+            class="w-[150px] sm:w-[205px] h-[40px] sm:h-[56px] text-center rounded-full text-xs sm:text-lg text-[#8B3C3A] border-2 solid border-[#8B3C3A] font-semibold uppercase hover:bg-[#8B3C3A] hover:text-white transition duration-500 ease-in-out my-3 sm:my-6"
+          >
+            Are you called?
+          </button>
+          <p class="text-[10px] text-[#3D3D3D] font-normal">
+            © 2021 ASSEMBLIES OF GOD WORLD MISSIONS
+          </p>
+        </div>
+        <div
+          class="md:col-span-1 flex sm:justify-center md:border-r solid border-[#f0f0f0] my-1 md:my-0"
+        >
+          <ul>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Home</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">pray</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Give</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Go</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">About Us</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Resources</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]"
+                >Privacy & Permissions</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="flex flex-col w-full md:w-auto md:col-span-1 mx-auto my-2 sm:my-0"
+        >
+          <h6 class="text-sm font-normal text-[#3D3D3D] mb-3">Connect</h6>
+          <div class="flex items-center">
+            <div
+              class="bg-[#8B3C3A] rounded-md w-8 h-8 mr-4 flex justify-center items-center hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/facebook.svg" alt="facebook" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 mr-4 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/viemo.svg" alt="viemo" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 mr-4 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/youtube.svg" alt="Youtube" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/insta.svg" alt="Instagram" />
+            </div>
+          </div>
+          <button
+            class="w-[150px] sm:w-[205px] h-[40px] sm:h-[56px] text-center rounded-full text-sm sm:text-lg text-[#8B3C3A] border-2 solid border-[#8B3C3A] font-semibold uppercase hover:bg-[#8B3C3A] hover:text-white transition duration-500 ease-in-out mt-4 sm:my-6"
+          >
+            Get in Touch
+          </button>
+        </div>
+      </div>
+      <div class="w-full">
+        <img src="./assets/img/footer-logos.svg" alt="Logos" class="w-full" />
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript">
+      // Toggle Language menu
+      const LangMenu = document.querySelector(".dropdown-select");
+      const dropDown = document.querySelector(".dropdown-menu");
+      const listText = document.querySelector(".selected");
+      const dropDownItem = document.querySelectorAll(".item");
+
+      LangMenu.addEventListener("click", () => {
+        LangMenu.classList.toggle("active");
+        dropDown.classList.toggle("active");
+        dropDownItem.forEach((item) => {
+          if (item.innerText === listText.innerText) {
+            item.classList.add("active-lang");
+          } else {
+            item.classList.remove("active-lang");
+          }
+        });
+      });
+
+      for (item of dropDownItem) {
+        item.addEventListener("click", showItem);
+      }
+      function showItem() {
+        event.preventDefault();
+
+        listText.innerHTML = this.textContent;
+        dropDown.classList.toggle("active");
+        LangMenu.classList.toggle("active");
+      }
+
+      //  Search Icon
+      const searchBar = document.querySelector(".search__bar");
+      const searchIcon = document.querySelector(".search__icon");
+      const mySearch = document.querySelector("#my__search");
+      const clear = document.querySelector(".clear");
+
+      searchIcon.addEventListener("click", () => {
+        searchBar.classList.toggle("active");
+      });
+
+      clear.addEventListener("click", () => {
+        mySearch.value = "";
+        searchBar.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <!-- TailwindCss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+            backgroundImage: {
+              "burger-menu": "url('./assets/img/berger-menu.svg')",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+
+    <nav
+      class="w-full flex items-center justify-between px-4 lg:px-[83px] pt-[20px] sm:pt-[35px] absolute"
+    >
+      <div class="flex items-center">
+        <button
+          class="w-6 h-6 bg-[url('./assets/img/berger-menu.svg')] mr-4 lg:mr-[47px]"
+        ></button>
+
+        <div class="">
+          <!--  Custome drop down.. -->
+          <div class="dropdown relative">
+            <div
+              class="dropdown-select flex items-center cursor-pointer transition duration-500 ease-in-out"
+            >
+              <span
+                class="selected text-lg text-white uppercase font-normal mr-[12px]"
+                >EN</span
+              >
+              <span class="ml-1"
+                ><svg
+                  width="11"
+                  height="6"
+                  viewBox="0 0 11 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.5 6L0.73686 0.75L10.2631 0.75L5.5 6Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            <ul
+              class="opacity-0 pointer-events-none w-40 absolute top-6 z-50 dropdown-menu bg-white border solid border-[#e2e2e2] mt-2 rounded-md shadow-2xl scale-90 transition duration-500 ease-in-out"
+            >
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2 rounded-md"
+              >
+                EN
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2 rounded-md"
+              >
+                FR
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2"
+              >
+                DU
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2"
+              >
+                AR
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="md:flex flex-col items-center w-[100px] md:w-[275px] xl:ml-[120px]"
+      >
+        <img src="./assets/img/app-logo.svg" alt="app-logo" class="" />
+        <span class="hidden md:inline-block text-sm text-white font-normal"
+          >Assemblies of God World Mission</span
+        >
+      </div>
+      <div class="hidden md:flex items-center relative">
+        <!-- Search Bar -->
+        <div class="relative cursor-pointer rounded-full mr-4 search__bar">
+          <span
+            class="search__icon inline-block absolute top-2 left-2 w-8 h-8 bg-center bg-[url('./assets/img/search.svg')] bg-no-repeat"
+          ></span>
+          <input
+            id="my__search"
+            class="h-full w-full outline-none border-none pl-12 pr-9 text-lg text-white font-semibold bg-transparent rounded-lg"
+            type="text"
+            placeholder="Search"
+          />
+          <div class="clear absolute right-2 top-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#fff"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- End Search Bar -->
+        <button
+          class="w-[211px] h-[56px] text-center rounded-full text-lg text-white border-2 solid border-white font-semibold uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out"
+        >
+          Are you called?
+        </button>
+      </div>
+    </nav>
+
+    <header
+      class="w-full md:h-[972px] py-[100px] md:py-0 px-4 lg:pl-[82px] xl:pl-[100px] bg-[url('./assets/img/regions/hero.svg')] bg-no-repeat bg-cover bg-center flex items-start justify-center flex-col"
+    >
+      <div
+        class="flex items-center mb-[20px] md:mb-[60px] flex-col md:flex-row"
+      >
+        <div
+          class="md:mr-[30px] lg:mr-[60px] w-full xl:w-[500px] 2xl:w-[600px] h-[300px] md:h-[340px] bg-[url('./assets/img/regions/video-cover.png')] bg-no-repeat bg-cover bg-center cursor-pointer rounded-2xl flex items-center justify-center"
+        >
+          <button id="openGregMundisVideo" class="w-[101px] h-[101px]">
+            <img src="./assets/img/play.svg" />
+          </button>
+        </div>
+
+        <div class="w-full xl:w-[592px] mt-6 md:mt-0">
+          <h2
+            class="text-[36px] md:text-[48px] xl:text-[64px] text-white font-normal lg:leading-[74px] mb-4"
+          >
+            Hear message from Greg Mundis
+          </h2>
+          <p class="text-lg lg:text-2xl text-white font-normal">
+            As executive director of AGWM, Greg Mundis provides leadership for
+            2685 AG missionaries and associates who serve 252 countries,
+            territories, and provinces.
+          </p>
+
+          <button
+            class="w-[204px] h-[56px] bg-white border-2 solid border-white text-lg text-black font-semibold rounded-full mt-6 md:mt-8 uppercase hover:scale-105 transition duration-500 ease-in-out"
+          >
+            Find More
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="w-full pt-6 lg:pt-[98px]">
+      <section
+        class="w-full px-4 lg:px-[60px] 2xl:px-[97px] mx-auto mb-[60px] lg:mb-[30px] text-center overflow-hidden"
+      >
+        <h3
+          class="text-[22px] md:text-[48px] xl:text-[64px] text-black font-semibold sm:font-normal"
+        >
+          Choose a Region to Explore
+        </h3>
+
+        <div class="mt-[30px] mb-[50px] lg:mt-[60px] lg:mb-[116px]">
+          <ul
+            class="tabs flex items-center justify-center flex-wrap md:flex-row h-[65px] md:h-auto test__tabs"
+          >
+            <li
+              class="list-none text-sm sm:text-lg lg:text-[22px] text-[#3D3D3D] font-black mr-3 md:mr-[40px] cursor-pointer sm:h-[35px] xl:h-[50px] mb-2 sm:mb-0"
+            >
+              Africa
+            </li>
+            <li
+              class="text-sm sm:text-lg lg:text-[22px] text-[#3D3D3D] font-black list-none mr-3 md:mr-[40px] cursor-pointer sm:h-[35px] xl:h-[50px] mb-2 sm:mb-0"
+            >
+              Asia Pacific
+            </li>
+            <li
+              class="text-sm sm:text-lg lg:text-[22px] text-[#3D3D3D] font-black list-none mr-3 md:mr-[40px] cursor-pointer sm:h-[35px] xl:h-[50px] mb-2 sm:mb-0"
+            >
+              Eurasia
+            </li>
+            <li
+              class="text-sm sm:text-lg lg:text-[22px] text-[#3D3D3D] font-black list-none mr-3 md:mr-[40px] cursor-pointer sm:h-[35px] xl:h-[50px] mb-2 sm:mb-0"
+            >
+              Europe
+            </li>
+            <li
+              class="text-sm sm:text-lg lg:text-[22px] text-[#3D3D3D] font-black list-none mr-3 md:mr-[40px] cursor-pointer sm:h-[35px] xl:h-[50px] mb-2 sm:mb-0"
+            >
+              International Ministress
+            </li>
+            <li
+              class="text-sm sm:text-lg lg:text-[22px] text-[#3D3D3D] font-black list-none mr-3 md:mr-[40px] cursor-pointer sm:h-[35px] xl:h-[50px] mb-2 sm:mb-0"
+            >
+              Latin America
+            </li>
+            <li
+              class="text-sm sm:text-lg lg:text-[22px] text-[#3D3D3D] font-black list-none cursor-pointer sm:h-[35px] xl:h-[50px] mb-2 sm:mb-0"
+            >
+              Northern Asia
+            </li>
+          </ul>
+        </div>
+        <div class="w-full">
+          <!-- content -->
+          <div class="w-full regions hidden">
+            <a href="#" class="w-full h-full block">
+              <img
+                src="./assets/img/regions/map.svg"
+                alt="Map Icon"
+                class="w-full h-full"
+              />
+            </a>
+          </div>
+
+          <div class="regions hidden flex flex-wrap">
+            <a href="#" class="w-full h-full block">
+              <img
+                src="./assets/img/regions/ap.jpg"
+                alt="Asia Pacific Image"
+                class="w-full h-full rounded-2xl"
+              />
+            </a>
+          </div>
+          <div class="regions hidden flex flex-wrap text-4xl text-black">
+            <a href="#" class="w-full h-full block">
+              <img
+                src="./assets/img/regions/eurasia.jpg"
+                alt="Eurasia Image"
+                class="w-full h-full rounded-2xl"
+              />
+            </a>
+          </div>
+          <div class="regions hidden flex flex-wrap text-4xl text-back">
+            <a href="#" class="w-full h-full block">
+              <img
+                src="./assets/img/regions/europe.jpg"
+                alt="Europe Image"
+                class="w-full h-full rounded-2xl"
+              />
+            </a>
+          </div>
+          <div class="regions hidden flex flex-wrap text-4xl">
+            <a href="#" class="w-full h-full block">
+              <img
+                src="./assets/img/regions/im.jpg"
+                alt="International Ministress Image"
+                class="w-full h-full rounded-2xl"
+              />
+            </a>
+          </div>
+          <div class="regions hidden flex flex-wrap text-4xl">
+            <a href="#" class="w-full h-full block">
+              <img
+                src="./assets/img/regions/lac.jpg"
+                alt="Latin America Image"
+                class="w-full h-full rounded-2xl"
+              />
+            </a>
+          </div>
+          <div class="regions hidden flex flex-wrap text-4xl">
+            <a href="#" class="w-full h-full block">
+              <img
+                src="./assets/img/regions/northen-asia.jpg"
+                alt="Northern Asia Image"
+                class="w-full h-full rounded-2xl"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+      <section
+        class="w-full sm:pl-4 lg:pl-[60px] 2xl:pl-[97px] mx-auto mb-[60px] lg:mb-[140px] text-center overflow-hidden"
+      >
+        <h3
+          class="text-[32px] sm:text-[36px] lg:text-[48px] xl:text-[64px] text-black font-normal mb-6 xl:mb-[100px]"
+        >
+          Our Mission
+        </h3>
+
+        <div
+          class="relative flex items-center justify-between flex-col-reverse sm:flex-row after:absolute after:top-0 after:w-full sm:after:w-[70%] after:h-full after:bg-[#7FA7B6] after:right-0 after:z-10 px-4 py-8"
+        >
+          <div class="w-full z-50 my-6">
+            <div
+              class="w-full sm:w-[350px] md:w-[500px] xl:w-[728px] h-[202px] xl:h-[404px] bg-[url('./assets/img/africa/reaching.png')] bg-center bg-no-repeat flex items-end justify-end pb-7 pr-12 rounded-2xl"
+            >
+              <p
+                class="text-lg sm:text-2xl md:text-3xl lg:text-5xl text-white font-normal"
+              >
+                Reaching
+              </p>
+            </div>
+
+            <div
+              class="w-full sm:w-[350px] md:w-[500px] xl:w-[728px] h-[202px] mt-5 bg-[url('./assets/img/africa/planting.png')] bg-center bg-no-repeat flex items-center justify-end pr-12 rounded-2xl"
+            >
+              <p
+                class="text-lg sm:text-2xl md:text-3xl lg:text-5xl text-white font-normal"
+              >
+                Planting
+              </p>
+            </div>
+
+            <div
+              class="w-full sm:w-[350px] md:w-[500px] xl:w-[728px] h-[202px] mt-5 bg-[url('./assets/img/africa/training.png')] bg-center bg-no-repeat flex items-center justify-end pr-12 rounded-2xl"
+            >
+              <p
+                class="text-lg sm:text-2xl md:text-3xl lg:text-5xl text-white font-normal"
+              >
+                Training
+              </p>
+            </div>
+
+            <div
+              class="w-full sm:w-[350px] md:w-[500px] xl:w-[728px] h-[202px] mt-5 bg-[url('./assets/img/africa/serving.png')] bg-center bg-no-repeat flex items-center justify-end pr-12 rounded-2xl"
+            >
+              <p
+                class="text-lg sm:text-2xl md:text-3xl lg:text-5xl text-white font-normal"
+              >
+                Serving
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="z-50 text-left sm:text-center sm:px-[50px] sm:xl:px-[84px] sm:py-[279px]"
+          >
+            <p
+              class="text-[24px] sm:text-[30px] lg:text-[52px] font-normal text-white uppercase"
+            >
+              ESTABLISHING THE CHURCH AMONG ALL PEOPLES EVERYWHERE BY REACHING,
+              PLANTING, TRAINING AND SERVING.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Regions---Video -->
+    <div
+      id="gregMundisVideo"
+      class="hidden pointer-events-none transition-all duration-500 ease-in-out w-full h-full fixed top-0 left-0 right-0 bottom-0 shadow-lg"
+      style="background-color: rgba(0, 0, 0, 0.8)"
+    >
+      <div class="scale_1 w-full h-full flex items-center justify-center">
+        <iframe
+          class="w-[1200px] h-[590px]"
+          src="https://www.youtube.com/embed/iRYDYrj3Bfw"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <button
+        id="closeGregMundisVideo"
+        class="absolute top-2 right-2 w-16 h-16"
+      >
+        <svg
+          width="56"
+          height="56"
+          viewBox="0 0 56 56"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M39.24 18.8799C38.07 17.7099 36.17 17.7099 35 18.8799L28.12 25.7599L21.24 18.8799C20.07 17.7099 18.17 17.7099 17 18.8799L25.94 27.8199L17 36.7599C18.17 37.9299 20.07 37.9299 21.24 36.7599L28.12 29.8799L35 36.7599C36.17 37.9299 38.07 37.9299 39.24 36.7599L30.3 27.8199L39.24 18.8799Z"
+            fill="white"
+          />
+        </svg>
+      </button>
+    </div>
+    <!-- Footer -->
+    <footer class="pt-6 sm:pt-16 border-t solid border-[#f0f0f0]">
+      <div
+        class="grid sm:grid-cols-2 md:grid-cols-3 px-4 lg:px-[75px] mb-4 md:pb-9"
+      >
+        <div
+          class="col-span-1 flex flex-col sm:border-r solid border-[#f0f0f0] mb-4 md:mb-0"
+        >
+          <div class="mb-4 sm:mb-7">
+            <img
+              src="./assets/img/colored-logo.svg"
+              alt="App-Logo"
+              class="h-[30px] sm:h-auto"
+            />
+          </div>
+
+          <p class="text-[#3D3D3D] font-normal text-sm">
+            1445 N. Boonville Avenue Springfield, MO 65802-1894 <br />
+            Phone: 1-417-862-3420
+          </p>
+          <button
+            class="w-[150px] sm:w-[205px] h-[40px] sm:h-[56px] text-center rounded-full text-xs sm:text-lg text-[#8B3C3A] border-2 solid border-[#8B3C3A] font-semibold uppercase hover:bg-[#8B3C3A] hover:text-white transition duration-500 ease-in-out my-3 sm:my-6"
+          >
+            Are you called?
+          </button>
+          <p class="text-[10px] text-[#3D3D3D] font-normal">
+            © 2021 ASSEMBLIES OF GOD WORLD MISSIONS
+          </p>
+        </div>
+        <div
+          class="md:col-span-1 flex sm:justify-center md:border-r solid border-[#f0f0f0] my-1 md:my-0"
+        >
+          <ul>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Home</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">pray</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Give</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Go</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">About Us</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Resources</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]"
+                >Privacy & Permissions</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="flex flex-col w-full md:w-auto md:col-span-1 mx-auto my-2 sm:my-0"
+        >
+          <h6 class="text-sm font-normal text-[#3D3D3D] mb-3">Connect</h6>
+          <div class="flex items-center">
+            <div
+              class="bg-[#8B3C3A] rounded-md w-8 h-8 mr-4 flex justify-center items-center hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/facebook.svg" alt="facebook" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 mr-4 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/viemo.svg" alt="viemo" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 mr-4 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/youtube.svg" alt="Youtube" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/insta.svg" alt="Instagram" />
+            </div>
+          </div>
+          <button
+            class="w-[150px] sm:w-[205px] h-[40px] sm:h-[56px] text-center rounded-full text-sm sm:text-lg text-[#8B3C3A] border-2 solid border-[#8B3C3A] font-semibold uppercase hover:bg-[#8B3C3A] hover:text-white transition duration-500 ease-in-out mt-4 sm:my-6"
+          >
+            Get in Touch
+          </button>
+        </div>
+      </div>
+      <div class="w-full">
+        <img src="./assets/img/footer-logos.svg" alt="Logos" class="w-full" />
+      </div>
+    </footer>
+
+    <!-- //  JS CODE -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript">
+      var swiper = new Swiper(".mySwiper-go, .mySwiper", {
+        scrollbar: {
+          el: ".swiper-scrollbar",
+          // hide: true,
+        },
+        // slidesPerView: 3,
+        allowTouchMove: true,
+
+        breakpoints: {
+          // when window width is >= 320px
+          300: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          // when window width is >= 480px
+
+          // when window width is >= 640px
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          992: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1192: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1390: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      // Grap all ul > li
+      const tabs = document.querySelectorAll(".tabs li");
+      // Grap all stories
+      const stories = document.querySelectorAll(".regions");
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+          // Remove Active class
+          tabs.forEach((tab) => tab.classList.remove("active_regions"));
+          // Add Active Class
+          tab.classList.add("active_regions");
+          //  Hide previous Stories
+          stories.forEach((c) => c.classList.remove("show__regions"));
+          // Show Content According To Tab Selected
+          stories[index].classList.add("show__regions");
+        });
+      });
+      // When Page Realod Put Active On First Fab
+      tabs[0].click();
+
+      // Get Video Elements.
+      const openGregMundisVideo = document.getElementById(
+        "openGregMundisVideo"
+      );
+      const gregMundisVideo = document.getElementById("gregMundisVideo");
+      const closeGregMundisVideo = document.getElementById(
+        "closeGregMundisVideo"
+      );
+
+      // Open Video
+      openGregMundisVideo.addEventListener("click", () => {
+        gregMundisVideo.classList.add("show");
+      });
+
+      //Close Video
+      closeGregMundisVideo.addEventListener("click", () => {
+        gregMundisVideo.classList.remove("show");
+      });
+
+      // Toggle Language menu
+      const LangMenu = document.querySelector(".dropdown-select");
+      const dropDown = document.querySelector(".dropdown-menu");
+      const listText = document.querySelector(".selected");
+      const dropDownItem = document.querySelectorAll(".item");
+
+      LangMenu.addEventListener("click", () => {
+        LangMenu.classList.toggle("active");
+        dropDown.classList.toggle("active");
+        dropDownItem.forEach((item) => {
+          if (item.innerText === listText.innerText) {
+            item.classList.add("active-lang");
+          } else {
+            item.classList.remove("active-lang");
+          }
+        });
+      });
+
+      for (item of dropDownItem) {
+        item.addEventListener("click", showItem);
+      }
+      function showItem() {
+        event.preventDefault();
+
+        listText.innerHTML = this.textContent;
+        dropDown.classList.toggle("active");
+        LangMenu.classList.toggle("active");
+      }
+
+      //  Search Bar
+      const searchBar = document.querySelector(".search__bar");
+      const searchIcon = document.querySelector(".search__icon");
+      const mySearch = document.querySelector("#my__search");
+      const clear = document.querySelector(".clear");
+
+      searchIcon.addEventListener("click", () => {
+        searchBar.classList.toggle("active");
+      });
+
+      clear.addEventListener("click", () => {
+        mySearch.value = "";
+        searchBar.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

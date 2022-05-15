@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <!-- TailwindCss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+            backgroundImage: {
+              "burger-menu": "url('./assets/img/berger-menu.svg')",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="w-full flex items-center justify-between px-4 lg:px-[83px] pt-[20px] sm:pt-[35px] absolute"
+    >
+      <div class="flex items-center">
+        <button
+          class="w-6 h-6 bg-[url('./assets/img/berger-menu.svg')] mr-4 lg:mr-[47px]"
+        ></button>
+
+        <div class="">
+          <!--  Custome drop down.. -->
+          <div class="dropdown relative">
+            <div
+              class="dropdown-select flex items-center cursor-pointer transition duration-500 ease-in-out"
+            >
+              <span
+                class="selected text-lg text-white uppercase font-normal mr-[12px]"
+                >EN</span
+              >
+              <span class="ml-1"
+                ><svg
+                  width="11"
+                  height="6"
+                  viewBox="0 0 11 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.5 6L0.73686 0.75L10.2631 0.75L5.5 6Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            <ul
+              class="opacity-0 pointer-events-none w-40 absolute top-6 z-50 dropdown-menu bg-white border solid border-[#e2e2e2] mt-2 rounded-md shadow-2xl scale-90 transition duration-500 ease-in-out"
+            >
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2 rounded-md"
+              >
+                EN
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2 rounded-md"
+              >
+                FR
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2"
+              >
+                DU
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2"
+              >
+                AR
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="md:flex flex-col items-center w-[100px] md:w-[275px]">
+        <img src="./assets/img/app-logo.svg" alt="app-logo" class="" />
+        <span class="hidden md:inline-block text-sm text-white font-normal"
+          >Assemblies of God World Mission</span
+        >
+      </div>
+      <div class="hidden md:flex items-center relative">
+        <!-- Search Bar -->
+        <div class="relative cursor-pointer rounded-full mr-4 search__bar">
+          <span
+            class="search__icon inline-block absolute top-2 left-2 w-8 h-8 bg-center bg-[url('./assets/img/search.svg')] bg-no-repeat"
+          ></span>
+          <input
+            id="my__search"
+            class="h-full w-full outline-none border-none pl-12 pr-9 text-lg text-white font-semibold bg-transparent rounded-lg"
+            type="text"
+            placeholder="Search"
+          />
+          <div class="clear absolute right-2 top-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#fff"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- End Search Bar -->
+        <button
+          class="w-[211px] h-[56px] text-center rounded-full text-lg text-white border-2 solid border-white font-semibold uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out"
+        >
+          Are you called?
+        </button>
+      </div>
+    </nav>
+    <header
+      class="pt-[90px] md:pt-[70px] h-[515px] lg:h-[780px] px-4 lg:px-[83px] bg-[url('./assets/img/hero-poster.png')] bg-no-repeat bg-cover bg-center"
+    >
+      <div
+        class="flex flex-col justify-center sm:items-center md:px-24 md:mt-[70px]"
+      >
+        <h2
+          class="text-[24px] md:text-[36px] xl:text-[64px] text-white font-normal mb-1 md:mb-4 lg:mb-[25px]"
+        >
+          Hear message from Greg Mundis
+        </h2>
+        <p
+          class="text-[16px] lg:text-[32px] text-white font-normal lg:font-light text-left sm:text-center"
+        >
+          As executive director of AGWM, Greg Mundis provides leadership for
+          2685 AG missionaries and associates who serve 252 countries,
+          territories, and provinces.
+        </p>
+      </div>
+    </header>
+    <!-- h-[300px] md:h-[568px] 2xl:h-full -->
+    <main class="w-full mb-[60px] md:mb-[100px] -mt-40 sm:-mt-56 xl:-mt-80">
+      <section
+        class="w-full h-full flex items-center justify-center px-4 sm:px-16 xl:px-48"
+      >
+        <div
+          class="relative w-full xl:max-w-[1028px] h-[250px] sm:h-[400px] lg:h-[568px] bg-[url('./assets/img/video__poster.png')] bg-cover bg-center bg-no-repeat rounded-3xl"
+        >
+          <button
+            id="openclosegregMundis"
+            class="play-pause w-[60px] h-[60px] xl:w-[140px] xl:h-[140px] absolute top-1/2 left-1/2 tl-center transition duration-500 ease-in-out"
+          >
+            <svg
+              class="w-full h-full"
+              viewBox="0 0 140 140"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="70" cy="70" r="69" stroke="white" stroke-width="2" />
+              <g clip-path="url(#clip0_754_804)">
+                <path
+                  d="M88.3211 65.7839L63.1001 48.5177C61.9354 47.7198 60.7618 47.2975 59.7863 47.2975C57.9005 47.2975 56.7339 48.811 56.7339 51.3445V88.6617C56.7339 91.1923 57.899 92.7029 59.7805 92.7029C60.7574 92.7029 61.9122 92.2802 63.0796 91.4801L88.3122 74.2143C89.935 73.1021 90.8336 71.6054 90.8336 69.9982C90.834 68.392 89.9456 66.8957 88.3211 65.7839Z"
+                  fill="white"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_754_804">
+                  <rect
+                    width="45.4054"
+                    height="45.4054"
+                    fill="white"
+                    transform="translate(51.0811 47.2975)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+        </div>
+      </section>
+      <!-- section that hold greg-mundis poster and some info -->
+      <section
+        class="flex flex-col items-center justify-center mt-8 xl:mt-32 px-4 lg:px-48"
+      >
+        <h2
+          class="text-4xl lg:text-[64px] text-black font-normal mb-6 md:mb-[70px]"
+        >
+          Greg Mundis
+        </h2>
+        <img
+          src="./assets/img/greg-mundis/greg-mundis-poster.svg"
+          alt="greg-mundis-poster"
+          class="rounded-md"
+        />
+        <div class="flex items-center justtify-center flex-col mt-8">
+          <!-- EMPTY DIV -->
+          <!-- <div
+            class="text-lg md:text-2xl font-light text-[#3D3D3D] text-left mt-6 mb-6 md:mt-16 md:mb-10"
+          ></div> -->
+          <!-- EMPTY DIV -->
+
+          <p
+            class="text-[24px] sm:text-[24px] md:text-[36px] text-[#3D3D3D] font-light text-left md:text-center mb-6 md:mb-10"
+          >
+            Dr. Greg Mundis <br />
+            Executive Director <br />
+            Assemblies of God World Missions
+          </p>
+          <p
+            class="text-lg md:text-2xl font-light text-[#3D3D3D] text-left mb-6 md:mb-10"
+          >
+            As executive director of AGWM, Greg Mundis provides leadership for
+            2685 AG missionaries and associates who serve 252 countries,
+            territories, and provinces.
+          </p>
+          <p
+            class="text-lg md:text-2xl font-light text-[#3D3D3D] text-left mb-6 md:mb-10"
+          >
+            A native of Ohio, Greg grew up in the Youngstown area. He accepted
+            Christ at the age of 13 during a military chapel service in Fort
+            Gordon, Georgia, while visiting his sister. Returning home, he soon
+            began attending a small Italian Pentecostal church and was baptized
+            in the Holy Spirit.
+          </p>
+          <p class="text-lg md:text-2xl font-light text-[#3D3D3D] text-left">
+            After high school Greg enrolled at Youngstown State University to
+            study political science, but his plans soon changed. At a Sunday
+            evening church service, he was praying at the altar when he sensed
+            God’s call to ministry. A message in tongues and interpretation
+            confirmed God’s plan for his life.
+          </p>
+        </div>
+        <div class="flex flex-start w-full mt-6 md:mt-12">
+          <button
+            class="border-none bg-none text-lg uppercase text-[#8B3C3B] font-normal"
+          >
+            read more
+          </button>
+        </div>
+      </section>
+      <!-- Executive Giving Initiatives -->
+      <section
+        class="px-4 lg:px-24 mt-[30px] md:mt-[118px] mb-[30px] md:mb-[100px]"
+      >
+        <div class="flex items-center justify-between mb-4 md:mb-16">
+          <h2 class="text-lg sm:text-2xl lg:text-[64px] font-normal text-black">
+            Executive Giving Initiatives
+          </h2>
+          <button
+            class="w-[120px] sm:w-[175px] h-[40px] sm:h-[56px] text-sm sm:text-lg font-normal uppercase text-[#8A4D32] border-2 solid border-[#8A4D32] hover:bg-[#8A4D32] hover:text-white rounded-full transition duration-500 ease-in-out"
+          >
+            Read all
+          </button>
+        </div>
+        <div class="swiper mySwiper h-[480px] md:h-[530px]">
+          <div class="swiper-wrapper greg__munids">
+            <div class="swiper-slide small__slide h-[439px] cursor-pointer">
+              <img
+                src="./assets/img/greg-mundis/The-Plaid-Zebra_Faces-Of-Africa.png"
+                alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+              />
+            </div>
+            <div
+              class="swiper-slide small__slide h-[439px] flex flex-col justify-center pl-[44px] cursor-pointer"
+            >
+              <div class="flex flex-col justify-center">
+                <h4 class="text-[#3D3D3D] text-2xl font-normal">NC²</h4>
+                <p>
+                  Our mission is to empower the <br />
+                  local church to serve their <br />
+                  community. Our desire is to see <br />
+                  healthy local churches creating <br />
+                  and leading the transformation in <br />
+                  their communities.
+                </p>
+                <a class="text-lg text-[#8B3C3B] fnot-normal">Explore</a>
+              </div>
+            </div>
+            <div class="swiper-slide small__slide h-[439px] cursor-pointer">
+              <img
+                src="./assets/img/greg-mundis/child-grils-poster.png"
+                alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+              />
+            </div>
+            <div
+              class="swiper-slide small__slide h-[439px] flex flex-col justify-center pl-[44px] cursor-pointer"
+            >
+              <div class="flex flex-col justify-center">
+                <h4 class="text-[#3D3D3D] text-2xl font-normal">NC²</h4>
+                <p>
+                  Our mission is to empower the <br />
+                  local church to serve their <br />
+                  community. Our desire is to see <br />
+                  healthy local churches creating <br />
+                  and leading the transformation in <br />
+                  their communities.
+                </p>
+                <button class="text-lg text-[#8B3C3B] fnot-normal">
+                  Explore
+                </button>
+              </div>
+            </div>
+            <div class="swiper-slide small__slide h-[439px] cursor-pointer">
+              <img
+                src="./assets/img/greg-mundis/The-Plaid-Zebra_Faces-Of-Africa.png"
+                alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+              />
+            </div>
+            <div
+              class="swiper-slide small__slide h-[439px] flex flex-col justify-center pl-[44px] cursor-pointer"
+            >
+              <div class="flex flex-col justify-center">
+                <h4 class="text-[#3D3D3D] text-2xl font-normal">NC²</h4>
+                <p>
+                  Our mission is to empower the <br />
+                  local church to serve their <br />
+                  community. Our desire is to see <br />
+                  healthy local churches creating <br />
+                  and leading the transformation in <br />
+                  their communities.
+                </p>
+                <button class="text-lg text-[#8B3C3B] fnot-normal">
+                  Explore
+                </button>
+              </div>
+            </div>
+            <div class="swiper-slide small__slide h-[439px] cursor-pointer">
+              <img
+                src="./assets/img/greg-mundis/The-Plaid-Zebra_Faces-Of-Africa.png"
+                alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+              />
+            </div>
+            <div
+              class="swiper-slide small__slide h-[439px] flex flex-col justify-center pl-[44px] cursor-pointer"
+            >
+              <div class="flex flex-col justify-center">
+                <h4 class="text-[#3D3D3D] text-2xl font-normal">NC²</h4>
+                <p>
+                  Our mission is to empower the <br />
+                  local church to serve their <br />
+                  community. Our desire is to see <br />
+                  healthy local churches creating <br />
+                  and leading the transformation in <br />
+                  their communities.
+                </p>
+                <button class="text-lg text-[#8B3C3B] fnot-normal">
+                  Explore
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide small__slide h-[439px] flex flex-col justify-center pl-[44px] cursor-pointer"
+            >
+              <div class="flex flex-col justify-center">
+                <h4 class="text-[#3D3D3D] text-2xl font-normal">NC²</h4>
+                <p>
+                  Our mission is to empower the <br />
+                  local church to serve their <br />
+                  community. Our desire is to see <br />
+                  healthy local churches creating <br />
+                  and leading the transformation in <br />
+                  their communities.
+                </p>
+                <a class="text-lg text-[#8B3C3B] fnot-normal">Explore</a>
+              </div>
+            </div>
+
+            <div class="swiper-slide small__slide h-[439px] cursor-pointer">
+              <img
+                src="./assets/img/greg-mundis/childs-girls-poster.png"
+                alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+              />
+            </div>
+            <div
+              class="swiper-slide small__slide h-[439px] flex flex-col justify-center pl-[44px] cursor-pointer"
+            >
+              <div class="flex flex-col justify-center">
+                <h4 class="text-[#3D3D3D] text-2xl font-normal">NC²</h4>
+                <p class="text-lg text-black font-light mb-[30px]">
+                  Our mission is to empower the <br />
+                  local church to serve their <br />
+                  community. Our desire is to see <br />
+                  healthy local churches creating <br />
+                  and leading the transformation in <br />
+                  their communities.
+                </p>
+                <button class="text-lg text-[#8B3C3B] fnot-normal">
+                  Explore
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </section>
+      <!-- Contact Information -->
+      <section
+        class="h-auto lg:h-[893px] mt-6 bg-[url('./assets/img//greg-mundis/contact-information-poster.png')] bg-no-repeat bg-cover bg-bottom rounded-2xl pt-[30px] lg:pt-[150px] lg:pl-[120px] px-4 mx-4 lg:mx-24 pb-8 pb:mb-0"
+      >
+        <h2
+          class="text-2xl md:text-4xl lg:text-[64px] text-white font-normal mb-4 md:mb-12"
+        >
+          Contact information
+        </h2>
+        <p
+          class="text-xs sm:text-base md:text-2xl text-white font-light mb-4 md:mb-10"
+        >
+          Assemblies of God World Missions <br />
+          1445 N. Boonville Avenue <br />Springfield, MO 65802-1894
+        </p>
+
+        <p
+          class="text-xs sm:text-base md:text-2xl text-white font-light mb-4 md:mb-10"
+        >
+          Phone: 417-862-2781 ext. 3050
+        </p>
+        <p
+          class="text-xs sm:text-base md:text-2xl text-white font-light mb-4 md:mb-10"
+        >
+          Bretta Gonsalez – bgonsalez@ag.org <br />
+          Executive Administrative Coordinator
+        </p>
+        <p class="text-xs sm:text-base md:text-2xl text-white font-light">
+          Sandie Cross – scross@ag.org <br />
+          Executive Administrative Assistant
+        </p>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="pt-6 sm:pt-16 border-t solid border-[#f0f0f0]">
+      <div
+        class="grid sm:grid-cols-2 md:grid-cols-3 px-4 lg:px-[75px] mb-4 md:pb-9"
+      >
+        <div
+          class="col-span-1 flex flex-col sm:border-r solid border-[#f0f0f0] mb-4 md:mb-0"
+        >
+          <div class="mb-4 sm:mb-7">
+            <img
+              src="./assets/img/colored-logo.svg"
+              alt="App-Logo"
+              class="h-[30px] sm:h-auto"
+            />
+          </div>
+
+          <p class="text-[#3D3D3D] font-normal text-sm">
+            1445 N. Boonville Avenue Springfield, MO 65802-1894 <br />
+            Phone: 1-417-862-3420
+          </p>
+          <button
+            class="w-[150px] sm:w-[205px] h-[40px] sm:h-[56px] text-center rounded-full text-xs sm:text-lg text-[#8B3C3A] border-2 solid border-[#8B3C3A] font-semibold uppercase hover:bg-[#8B3C3A] hover:text-white transition duration-500 ease-in-out my-3 sm:my-6"
+          >
+            Are you called?
+          </button>
+          <p class="text-[10px] text-[#3D3D3D] font-normal">
+            © 2021 ASSEMBLIES OF GOD WORLD MISSIONS
+          </p>
+        </div>
+        <div
+          class="md:col-span-1 flex sm:justify-center md:border-r solid border-[#f0f0f0] my-1 md:my-0"
+        >
+          <ul>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Home</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">pray</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Give</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Go</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">About Us</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Resources</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]"
+                >Privacy & Permissions</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="flex flex-col w-full md:w-auto md:col-span-1 mx-auto my-2 sm:my-0"
+        >
+          <h6 class="text-sm font-normal text-[#3D3D3D] mb-3">Connect</h6>
+          <div class="flex items-center">
+            <div
+              class="bg-[#8B3C3A] rounded-md w-8 h-8 mr-4 flex justify-center items-center hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/facebook.svg" alt="facebook" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 mr-4 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/viemo.svg" alt="viemo" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 mr-4 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/youtube.svg" alt="Youtube" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/insta.svg" alt="Instagram" />
+            </div>
+          </div>
+          <button
+            class="w-[150px] sm:w-[205px] h-[40px] sm:h-[56px] text-center rounded-full text-sm sm:text-lg text-[#8B3C3A] border-2 solid border-[#8B3C3A] font-semibold uppercase hover:bg-[#8B3C3A] hover:text-white transition duration-500 ease-in-out mt-4 sm:my-6"
+          >
+            Get in Touch
+          </button>
+        </div>
+      </div>
+      <div class="w-full">
+        <img src="./assets/img/footer-logos.svg" alt="Logos" class="w-full" />
+      </div>
+    </footer>
+    <!-- Video -->
+    <div
+      id="gregMundis"
+      class="hidden pointer-events-none w-full h-full fixed top-0 left-0 transition-all duration-500 ease-in-out shadow-lg"
+      style="background-color: rgba(0, 0, 0, 0.8)"
+    >
+      <div
+        class="scale_1 w-full h-full flex items-center justify-center transition-all duration-500 ease-in-out"
+      >
+        <iframe
+          class="w-[1150px] h-[590px] rounded-md"
+          src="https://www.youtube.com/embed/KaNW3Cnqza0"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <button id="closegregMundis" class="absolute top-2 right-2 w-16 h-16">
+        <svg
+          width="56"
+          height="56"
+          viewBox="0 0 56 56"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M39.24 18.8799C38.07 17.7099 36.17 17.7099 35 18.8799L28.12 25.7599L21.24 18.8799C20.07 17.7099 18.17 17.7099 17 18.8799L25.94 27.8199L17 36.7599C18.17 37.9299 20.07 37.9299 21.24 36.7599L28.12 29.8799L35 36.7599C36.17 37.9299 38.07 37.9299 39.24 36.7599L30.3 27.8199L39.24 18.8799Z"
+            fill="white"
+          />
+        </svg>
+      </button>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript">
+      var swiper = new Swiper(".mySwiper", {
+        scrollbar: {
+          el: ".swiper-scrollbar",
+          // hide: true,
+        },
+        slidesPerView: 3,
+        allowTouchMove: true,
+
+        breakpoints: {
+          // when window width is >= 320px
+          300: {
+            slidesPerView: 1,
+            // spaceBetween: 20,
+          },
+          // when window width is >= 480px
+          480: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          // when window width is >= 640px
+          640: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+        },
+      });
+      // Resources Page Modal
+      const openclosegregMundis = document.getElementById(
+        "openclosegregMundis"
+      );
+      const gregMundis = document.getElementById("gregMundis");
+      const closegregMundis = document.getElementById("closegregMundis");
+
+      // Open ResourcesMoal
+      openclosegregMundis.addEventListener("click", () => {
+        gregMundis.classList.add("show");
+      });
+
+      //Close ResourcesMoal
+      closegregMundis.addEventListener("click", () => {
+        gregMundis.classList.remove("show");
+      });
+
+      // Toggle Language menu
+      const LangMenu = document.querySelector(".dropdown-select");
+      const dropDown = document.querySelector(".dropdown-menu");
+      const listText = document.querySelector(".selected");
+      const dropDownItem = document.querySelectorAll(".item");
+
+      LangMenu.addEventListener("click", () => {
+        LangMenu.classList.toggle("active");
+        dropDown.classList.toggle("active");
+        dropDownItem.forEach((item) => {
+          if (item.innerText === listText.innerText) {
+            item.classList.add("active-lang");
+          } else {
+            item.classList.remove("active-lang");
+          }
+        });
+      });
+
+      for (item of dropDownItem) {
+        item.addEventListener("click", showItem);
+      }
+      function showItem() {
+        event.preventDefault();
+
+        listText.innerHTML = this.textContent;
+        dropDown.classList.toggle("active");
+        LangMenu.classList.toggle("active");
+      }
+
+      //  Search Icon
+      const searchBar = document.querySelector(".search__bar");
+      const searchIcon = document.querySelector(".search__icon");
+      const mySearch = document.querySelector("#my__search");
+      const clear = document.querySelector(".clear");
+
+      searchIcon.addEventListener("click", () => {
+        searchBar.classList.toggle("active");
+      });
+
+      clear.addEventListener("click", () => {
+        mySearch.value = "";
+        searchBar.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

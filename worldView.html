@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>World View And More Arhive</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="w-full flex items-center justify-between px-4 lg:px-[83px] pt-[20px] sm:pt-[35px] absolute"
+    >
+      <div class="flex items-center">
+        <button
+          class="w-6 h-6 bg-[url('./assets/img/berger-menu.svg')] mr-4 lg:mr-[47px]"
+        ></button>
+
+        <div class="">
+          <!--  Custome drop down.. -->
+          <div class="dropdown relative">
+            <div
+              class="dropdown-select flex items-center cursor-pointer transition duration-500 ease-in-out"
+            >
+              <span
+                class="selected text-lg text-white uppercase font-normal mr-[12px]"
+                >EN</span
+              >
+              <span class="ml-1"
+                ><svg
+                  width="11"
+                  height="6"
+                  viewBox="0 0 11 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.5 6L0.73686 0.75L10.2631 0.75L5.5 6Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            <ul
+              class="opacity-0 pointer-events-none w-40 absolute top-6 z-50 dropdown-menu bg-white border solid border-[#e2e2e2] mt-2 rounded-md shadow-2xl scale-90 transition duration-500 ease-in-out"
+            >
+              <li
+                class="item text-lg text-[#8d959f] cursor-pointer px-8 py-2 rounded-md"
+              >
+                EN
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] cursor-pointer px-8 py-2 rounded-md"
+              >
+                FR
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] cursor-pointer px-8 py-2 rounded-md"
+              >
+                DU
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] cursor-pointer px-8 py-2 rounded-md"
+              >
+                AR
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="md:flex flex-col items-center w-[100px] md:w-[275px]">
+        <img src="./assets/img/app-logo.svg" alt="app-logo" class="" />
+        <span class="hidden md:inline-block text-sm text-white font-normal"
+          >Assemblies of God World Mission</span
+        >
+      </div>
+      <div class="hidden md:flex items-center relative">
+        <!-- Search Bar -->
+        <div class="relative cursor-pointer rounded-full mr-4 search__bar">
+          <span
+            class="search__icon inline-block absolute top-2 left-2 w-8 h-8 bg-center bg-[url('./assets/img/search.svg')] bg-no-repeat"
+          ></span>
+          <input
+            id="my__search"
+            class="h-full w-full outline-none border-none pl-12 pr-9 text-lg text-white font-semibold bg-transparent rounded-lg"
+            type="text"
+            placeholder="Search"
+          />
+          <div class="clear absolute right-2 top-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#fff"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- End Search Bar -->
+        <button
+          class="w-[211px] h-[56px] text-center rounded-full text-lg text-white border-2 solid border-white font-semibold uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out"
+        >
+          Are you called?
+        </button>
+      </div>
+    </nav>
+    <header
+      class="pt-[70px] lg:pt-7 h-[400px] sm:h-[450px] md:h-[616px] px-4 lg:px-[83px] bg-[url('./assets/img/worldView/hero.png')] bg-no-repeat bg-cover bg-center"
+    >
+      <div class="flex flex-col justify-center items-center sm:mt-20 lg:mt-32">
+        <h2
+          class="text-[32px] md:text-[64px] text-white font-normal text-center xl:ml-[-92px]"
+        >
+          World View & More Archive
+        </h2>
+        <div
+          class="flex items-center mt-9 md:mt-[60px] border-2 solid border-white w-full h-[45px] md:h-[56px] rounded-full md:w-[753px] relative"
+        >
+          <span class="pl-4 md:pl-7 mt-1">
+            <svg
+              class="w-[15px] h-[15px] md:w-[24px] md:h-[24px]"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10ZM10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20C12.0916 20 14.0333 19.3578 15.6386 18.2599L21.1893 23.8107L23.3107 21.6893L17.8354 16.2141C19.1905 14.5076 20 12.3484 20 10C20 4.47715 15.5228 0 10 0Z"
+                fill="white"
+              />
+            </svg>
+          </span>
+          <input
+            class="h-full w-[calc(100%-120px)] md:w-[calc(100%-290px)] pl-2 md:pl-[23px] rounded-full bg-transparent text-base sm:text-lg text-white font-normal outline-none placeholder:text-xs sm:placeholder:text-lg placeholder:text-white"
+            placeholder="Begin your search here"
+          />
+
+          <button
+            class="w-[100px] md:w-[235px] h-full bg-white text-sm md:text-lg font-medium rounded-full uppercase absolute -right-1"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- -translate-y-2/3 -->
+    <main
+      class="w-full px-4 xl:px-32 2xl:px-48 mb-[30px] xl:mb-[125px] -mt-28 sm:-mt-24 md:-mt-44"
+    >
+      <!-- Wrold__wide&More -->
+
+      <section
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-x-5 md:gap-y-14"
+      >
+        <a href="#" class="w-auto">
+          <div
+            class="w-full h-auto flex items-center justify-center w-full rounded-lg mb-2 md:mb-6"
+          >
+            <img
+              src="./assets/img/resources/v7n1africa.png"
+              alt="Logo"
+              class="w-full h-full"
+            />
+          </div>
+          <p
+            class="text-base sm:text-lg xl:text-2xl text-white font-semibold text-[#3D3D3D] sm:ml-4"
+          >
+            V7 N2 University Ministries
+          </p>
+        </a>
+        <a href="#" class="w-auto">
+          <div
+            class="w-full h-auto flex items-center justify-center w-full rounded-lg mb-2 md:mb-6"
+          >
+            <img
+              src="./assets/img/resources/v7n2universityministries.png"
+              alt="Logo"
+              class="w-full h-full"
+            />
+          </div>
+          <p
+            class="text-base sm:text-lg xl:text-2xl text-white font-semibold text-[#3D3D3D] sm:ml-4"
+          >
+            V7 N2 University Ministries
+          </p>
+        </a>
+        <a href="#" class="w-auto">
+          <div
+            class="w-full h-auto flex items-center justify-center w-full rounded-lg mb-2 md:mb-6"
+          >
+            <img
+              src="./assets/img/resources/v7n3germany.png"
+              alt="Logo"
+              class="w-full h-full"
+            />
+          </div>
+          <p
+            class="text-base sm:text-lg xl:text-2xl text-white font-semibold text-[#3D3D3D] sm:ml-4"
+          >
+            V7 N3 Germany
+          </p>
+        </a>
+        <a href="#" class="w-auto">
+          <div
+            class="w-full h-auto flex items-center justify-center w-full rounded-lg mb-2 md:mb-6"
+          >
+            <img
+              src="./assets/img/resources/v7n5madrid.png"
+              alt="Logo"
+              class="w-full h-full"
+            />
+          </div>
+          <p
+            class="text-base sm:text-lg xl:text-2xl text-white font-semibold text-[#3D3D3D] sm:ml-4"
+          >
+            V7 N5 Madrid
+          </p>
+        </a>
+        <a href="#" class="w-auto">
+          <div
+            class="w-full h-auto flex items-center justify-center w-full rounded-lg mb-2 md:mb-6"
+          >
+            <img
+              src="./assets/img/resources/v7n6elsalvador.png"
+              alt="Logo"
+              class="w-full h-full"
+            />
+          </div>
+          <p
+            class="text-base sm:text-lg xl:text-2xl text-white font-semibold text-[#3D3D3D] ml-4"
+          >
+            V7 N6 El Salvador
+          </p>
+        </a>
+        <a href="#" class="w-auto">
+          <div
+            class="w-full h-auto flex items-center justify-center w-full bg-center rounded-lg mb-2 md:mb-6"
+          >
+            <img
+              src="./assets/img/resources/v7n7europe.png"
+              alt="Logo"
+              class="w-full h-full"
+            />
+          </div>
+          <p
+            class="text-base sm:text-lg xl:text-2xl text-white font-semibold text-[#3D3D3D] ml-4"
+          >
+            V7 N7 Europe
+          </p>
+        </a>
+      </section>
+
+      <!-- AGWM World View -->
+      <section class="mt-8 md:mt-24">
+        <div class="flex items-center justify-between">
+          <h4
+            class="text-[16px] sm:text-[36px] xl:text-[64px] tex-black font-bold sm:text-fontsemibold xl:text-normal"
+          >
+            AGWM Resource Center
+          </h4>
+          <button
+            class="sm:w-[175px] sm:h-[56px] text-center rounded-full text-sm sm:text-base lg:text-lg text-[#8A4D32] sm:border-2 solid border-[#8A4D32] font-semibold sm:font-normal sm:uppercase sm:hover:bg-[#8A4D32] sm:hover:text-white transition duration-500 ease-in-out"
+          >
+            Go to shop
+          </button>
+        </div>
+        <p
+          class="text-base sm:text-4xl text-[#3D3D3D] font-normal sm:font-light mb-7 sm:mb-0"
+        >
+          Featured Products
+        </p>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 xl:gap-4 2xl:gap-8 mt-20"
+        >
+          <a class="" href="#">
+            <div class="flex items-center w-full mb-2 sm:mb-6">
+              <img
+                src="./assets/img/resources/boy_poster.png"
+                alt="product-Logo"
+                class="w-full"
+              />
+            </div>
+            <p
+              class="text-lg xl:text-2xl font-semibold xl:font-normal text-[#3D3D3D] xl:ml-4"
+            >
+              Subscribe Today
+            </p>
+
+            <p class="text-base xl:text-2xl font-normal text-[#3D3D3D] xl:ml-4">
+              Worldview 12 issues / 1 year Single Subscription - $ 7.95
+            </p>
+            <p class="text-md xl:text-lg font-light text-black xl:ml-4">
+              Single Monthly Subscription
+            </p>
+          </a>
+          <a href="#">
+            <div class="flex items-center w-full mb-2 sm:mb-6">
+              <img
+                src="./assets/img/resources/bluetoothaudiospeaker.png"
+                alt="product-Logo"
+                class="w-full"
+              />
+            </div>
+            <p class="text-lg xl:text-2xl font-normal text-[#3D3D3D] xl:ml-4">
+              Bluetooth Audio Speaker
+            </p>
+
+            <p class="text-lg xl:text-2xl font-normal text-[#3D3D3D] xl:ml-4">
+              $20.00
+            </p>
+          </a>
+          <a href="#">
+            <div class="flex items-center rounded-lg mb-2 sm:mb-6">
+              <img
+                src="./assets/img/resources/allforjesusvinylsticker.png"
+                alt="product-Logo"
+                class="w-full"
+              />
+            </div>
+            <p
+              class="text-lg font-semibold xl:text-2xl sm:font-normal text-[#3D3D3D] xl:ml-4"
+            >
+              Bluetooth Audio Speaker
+            </p>
+
+            <p class="text-lg sm:text-2xl font-normal text-[#3D3D3D] xl:ml-4">
+              $20.00
+            </p>
+          </a>
+        </div>
+
+        <a
+          href="#"
+          class="flex justify-center items-center w-[175px] h-[50px] sm:h-[56px] text-center rounded-full text-lg font-normal text-[#8A4D32] uppercase border-2 solid border-[#8A4D32] font-semibold uppercase hover:bg-[#8A4D32] hover:text-white transition duration-500 ease-in-out mt-4 xl:mt-8 xl:ml-4"
+        >
+          Subscribe
+        </a>
+      </section>
+      <!-- Video -->
+    </main>
+    <!-- Footer -->
+    <footer class="pt-6 sm:pt-16 border-t solid border-[#f0f0f0]">
+      <div
+        class="grid sm:grid-cols-2 md:grid-cols-3 px-4 lg:px-[75px] mb-4 md:pb-9"
+      >
+        <div
+          class="col-span-1 flex flex-col sm:border-r solid border-[#f0f0f0] mb-4 md:mb-0"
+        >
+          <div class="mb-4 sm:mb-7">
+            <img
+              src="./assets/img/colored-logo.svg"
+              alt="App-Logo"
+              class="h-[30px] sm:h-auto"
+            />
+          </div>
+
+          <p class="text-[#3D3D3D] font-normal text-sm">
+            1445 N. Boonville Avenue Springfield, MO 65802-1894 <br />
+            Phone: 1-417-862-3420
+          </p>
+          <button
+            class="w-[150px] sm:w-[205px] h-[40px] sm:h-[56px] text-center rounded-full text-xs sm:text-lg text-[#8B3C3A] border-2 solid border-[#8B3C3A] font-semibold uppercase hover:bg-[#8B3C3A] hover:text-white transition duration-500 ease-in-out my-3 sm:my-6"
+          >
+            Are you called?
+          </button>
+          <p class="text-[10px] text-[#3D3D3D] font-normal">
+            © 2021 ASSEMBLIES OF GOD WORLD MISSIONS
+          </p>
+        </div>
+        <div
+          class="md:col-span-1 flex sm:justify-center md:border-r solid border-[#f0f0f0] my-1 md:my-0"
+        >
+          <ul>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Home</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">pray</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Give</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Go</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">About Us</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Resources</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]"
+                >Privacy & Permissions</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="flex flex-col w-full md:w-auto md:col-span-1 mx-auto my-2 sm:my-0"
+        >
+          <h6 class="text-sm font-normal text-[#3D3D3D] mb-3">Connect</h6>
+          <div class="flex items-center">
+            <div
+              class="bg-[#8B3C3A] rounded-md w-8 h-8 mr-4 flex justify-center items-center hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/facebook.svg" alt="facebook" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 mr-4 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/viemo.svg" alt="viemo" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 mr-4 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/youtube.svg" alt="Youtube" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/insta.svg" alt="Instagram" />
+            </div>
+          </div>
+          <button
+            class="w-[150px] sm:w-[205px] h-[40px] sm:h-[56px] text-center rounded-full text-sm sm:text-lg text-[#8B3C3A] border-2 solid border-[#8B3C3A] font-semibold uppercase hover:bg-[#8B3C3A] hover:text-white transition duration-500 ease-in-out mt-4 sm:my-6"
+          >
+            Get in Touch
+          </button>
+        </div>
+      </div>
+      <div class="w-full">
+        <img src="./assets/img/footer-logos.svg" alt="Logos" class="w-full" />
+      </div>
+    </footer>
+    <div
+      id="resourcesModal"
+      class="hidden pointer-events-none transition-all duration-500 ease-in-out w-full h-full fixed top-0 left-0 right-0 bottom-0 shadow-lg"
+      style="background-color: rgba(0, 0, 0, 0.8)"
+    >
+      <div class="scale_1 w-full h-full flex items-center justify-center">
+        <iframe
+          class="w-[1200px] h-[590px]"
+          src="https://www.youtube.com/embed/iRYDYrj3Bfw"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <button id="closeResourcesModal" class="absolute top-2 right-2 w-16 h-16">
+        <svg
+          width="56"
+          height="56"
+          viewBox="0 0 56 56"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M39.24 18.8799C38.07 17.7099 36.17 17.7099 35 18.8799L28.12 25.7599L21.24 18.8799C20.07 17.7099 18.17 17.7099 17 18.8799L25.94 27.8199L17 36.7599C18.17 37.9299 20.07 37.9299 21.24 36.7599L28.12 29.8799L35 36.7599C36.17 37.9299 38.07 37.9299 39.24 36.7599L30.3 27.8199L39.24 18.8799Z"
+            fill="white"
+          />
+        </svg>
+      </button>
+    </div>
+    <script type="text/javascript">
+      // Resources Page Modal
+      const openResources = document.getElementById("openResourcesModal");
+      const resourcesModal = document.getElementById("resourcesModal");
+      const closeResourcesModal = document.getElementById(
+        "closeResourcesModal"
+      );
+
+      // Open ResourcesMoal
+      openResources.addEventListener("click", () => {
+        resourcesModal.classList.add("show");
+      });
+
+      //Close ResourcesMoal
+      closeResourcesModal.addEventListener("click", () => {
+        resourcesModal.classList.remove("show");
+      });
+
+      // Toggle Language menu
+      const LangMenu = document.querySelector(".dropdown-select");
+      const dropDown = document.querySelector(".dropdown-menu");
+      const listText = document.querySelector(".selected");
+      const dropDownItem = document.querySelectorAll(".item");
+
+      LangMenu.addEventListener("click", () => {
+        LangMenu.classList.toggle("active");
+        dropDown.classList.toggle("active");
+        dropDownItem.forEach((item) => {
+          if (item.innerText === listText.innerText) {
+            item.classList.add("active-lang");
+          } else {
+            item.classList.remove("active-lang");
+          }
+        });
+      });
+
+      for (item of dropDownItem) {
+        item.addEventListener("click", showItem);
+      }
+      function showItem() {
+        event.preventDefault();
+
+        listText.innerHTML = this.textContent;
+        dropDown.classList.toggle("active");
+        LangMenu.classList.toggle("active");
+      }
+
+      //  Search Icon
+      const searchBar = document.querySelector(".search__bar");
+      const searchIcon = document.querySelector(".search__icon");
+      const mySearch = document.querySelector("#my__search");
+      const clear = document.querySelector(".clear");
+
+      searchIcon.addEventListener("click", () => {
+        searchBar.classList.toggle("active");
+      });
+
+      clear.addEventListener("click", () => {
+        mySearch.value = "";
+        searchBar.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

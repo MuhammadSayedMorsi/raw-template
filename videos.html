@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Videos</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="w-full flex items-center justify-between px-4 lg:px-[83px] pt-[20px] sm:pt-[35px] absolute"
+    >
+      <div class="flex items-center">
+        <button
+          class="w-6 h-6 bg-[url('./assets/img/berger-menu.svg')] mr-4 lg:mr-[55px]"
+        ></button>
+
+        <div class="flex items-center">
+          <!--  Custome drop down.. -->
+          <div class="dropdown relative">
+            <div
+              class="dropdown-select flex items-center cursor-pointer transition duration-500 ease-in-out"
+            >
+              <span
+                class="selected text-lg text-white uppercase font-normal mr-[12px]"
+                >EN</span
+              >
+              <span class="ml-1"
+                ><svg
+                  width="11"
+                  height="6"
+                  viewBox="0 0 11 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.5 6L0.73686 0.75L10.2631 0.75L5.5 6Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            <ul
+              class="opacity-0 pointer-events-none w-40 absolute top-6 z-50 dropdown-menu bg-white border solid border-[#e2e2e2] mt-2 rounded-md shadow-2xl scale-90 transition duration-500 ease-in-out"
+            >
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2 rounded-md"
+              >
+                EN
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2 rounded-md"
+              >
+                FR
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2"
+              >
+                DU
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2"
+              >
+                AR
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="md:flex flex-col items-center w-[100px] md:w-[275px]">
+        <img src="./assets/img/app-logo.svg" alt="app-logo" class="" />
+        <div class="hidden md:inline-block text-sm text-white font-normal">
+          Assemblies of God World Mission
+        </div>
+      </div>
+      <div class="hidden md:flex items-center">
+        <!-- Search Bar -->
+        <div class="relative cursor-pointer rounded-full mr-4 search__bar">
+          <span
+            class="search__icon inline-block absolute top-2 left-2 w-8 h-8 bg-center bg-[url('./assets/img/search.svg')] bg-no-repeat"
+          ></span>
+          <input
+            id="my__search"
+            class="h-full w-full outline-none border-none pl-12 pr-9 text-lg text-white font-semibold bg-transparent rounded-lg"
+            type="text"
+            placeholder="Search"
+          />
+          <div class="clear absolute right-2 top-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#fff"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- End Search Bar -->
+        <button
+          class="w-[211px] h-[56px] text-center rounded-full text-lg text-white border-2 solid border-white font-semibold uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out"
+        >
+          Are you called?
+        </button>
+      </div>
+    </nav>
+
+    <header
+      class="pt-[70px] h-full px-4 md:px-[83px] h-[400px] md:[550px] lg:h-[682px] bg-[url('./assets/img/videos/video_hero_poster.png')] bg-no-repeat bg-cover bg-center"
+    >
+      <div class="flex flex-col justify-center items-center md:mt-16 lg:mt-20">
+        <h2
+          class="text-[36px] md:text-[64px] text-white font-normal md:ml-[-140px]"
+        >
+          Videos
+        </h2>
+      </div>
+    </header>
+
+    <main class="w-full px-4 xl:px-48 mb-[30px] xl:mb-[129px] -mt-28 lg:-mt-80">
+      <section class="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[624px]">
+        <div
+          class="flex items-center justify-center w-full h-full bg-[url('./assets/img/resources_vidoe_poster.png')] bg-no-repeat bg-cover bg-top rounded-3xl"
+        >
+          <button id="showVideos" class="w-14 h-14 xl:w-36 xl:h-36">
+            <img src="./assets/img/play.svg" alt="play icon" class="w-full" />
+          </button>
+        </div>
+      </section>
+      <section
+        class="flex justify-between flex-wrap mt-[100px] mt-10 gap-8 md:gap-0"
+      >
+        <div class="w-full md:w-[calc(50%-20px)]">
+          <div
+            class="w-full h-[250px] md:h-[350px] cursor-pointer flex items-center justify-center w-full bg-[url('./assets/img/videos/vision.png')] bg-no-repeat bg-cover bg-center rounded-lg mb-6"
+          >
+            <button id="showVideos" class="w-[101px] h-[101px]">
+              <img src="./assets/img/play.svg" />
+            </button>
+          </div>
+          <h5 class="text-2xl font-normal text-[#3D3D3D] md:ml-4">Videos</h5>
+          <p class="text-lg font-light text-black md:ml-4">
+            Our mission is to empower the local church to serve their community.
+            Our desire is to see healthy local churches creating and leading the
+            transformation in their communities.
+          </p>
+        </div>
+        <div class="w-full md:w-[calc(50%-20px)]">
+          <div
+            class="w-full h-[250px] md:h-[350px] flex items-center justify-center w-full bg-[url('./assets/img/videos/together.png')] bg-no-repeat bg-cover bg-center cursor-pointer rounded-lg mb-6"
+          >
+            <button id="showVideos" class="w-[101px] h-[101px]">
+              <img src="./assets/img/play.svg" />
+            </button>
+          </div>
+          <h5 class="text-2xl font-normal text-[#3D3D3D] md:ml-4">Together</h5>
+          <p class="text-lg font-light text-black md:ml-4">
+            Our mission is to empower the local church to serve their community.
+            Our desire is to see healthy local churches creating and leading the
+            transformation in their communities.
+          </p>
+        </div>
+        <div class="w-full md:w-[calc(50%-20px)] md:mt-20">
+          <div
+            class="w-full h-[250px] md:h-[350px] flex items-center justify-center w-full bg-[url('./assets/img/videos/vision2.png')] bg-no-repeat bg-cover bg-center cursor-pointer rounded-lg mb-6"
+          >
+            <button id="showVideos" class="w-[101px] h-[101px]">
+              <img src="./assets/img/play.svg" />
+            </button>
+          </div>
+          <h5 class="text-2xl font-normal text-[#3D3D3D] md:ml-4">Together</h5>
+          <p class="text-lg font-light text-black md:ml-4">
+            Our mission is to empower the local church to serve their community.
+            Our desire is to see healthy local churches creating and leading the
+            transformation in their communities.
+          </p>
+        </div>
+        <div class="w-full md:w-[calc(50%-20px)] md:mt-20">
+          <div
+            class="w-full h-[250px] md:h-[350px] flex items-center justify-center w-full bg-[url('./assets/img/videos/vision3.png')] bg-no-repeat bg-cover bg-center cursor-pointer rounded-lg mb-6"
+          >
+            <button id="showVideos" class="w-[101px] h-[101px]">
+              <img src="./assets/img/play.svg" />
+            </button>
+          </div>
+          <h5 class="text-2xl font-normal text-[#3D3D3D] md:ml-4">Together</h5>
+          <p class="text-lg font-light text-black md:ml-4">
+            Our mission is to empower the local church to serve their community.
+            Our desire is to see healthy local churches creating and leading the
+            transformation in their communities.
+          </p>
+        </div>
+      </section>
+
+      <!-- AGWM Media Hub -->
+      <section class="mt-8 md:mt-24">
+        <h3
+          class="text-[24px] md:text-[64px] text-black font-semibold md:font-normal"
+        >
+          AGWM Media Hub
+        </h3>
+        <ul class="mt-4 md:mt-14">
+          <li
+            class="flex items-center text-lg md:text-4xl font-light text-black mb-10"
+          >
+            <svg
+              width="8"
+              height="8"
+              viewBox="0 0 8 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="4" cy="4" r="4" fill="black" />
+            </svg>
+
+            <span class="ml-4 md:ml-10"
+              >Videos: Stream and download missions news and resourcing videos
+              for all age groups.</span
+            >
+          </li>
+          <li
+            class="flex items-center text-lg md:text-4xl font-light text-black mb-10"
+          >
+            <svg
+              width="8"
+              height="8"
+              viewBox="0 0 8 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="4" cy="4" r="4" fill="black" />
+            </svg>
+            <span class="ml-4 md:ml-10">
+              Lobby Media Shows: Videos for use in lobby video systems.</span
+            >
+            <span></span>
+          </li>
+          <li
+            class="flex items-center text-lg md:text-4xl font-light text-black mb-10"
+          >
+            <svg
+              width="8"
+              height="8"
+              viewBox="0 0 8 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="4" cy="4" r="4" fill="black" />
+            </svg>
+            <span class="ml-4 md:ml-10"
+              >Missions Music: Music videos with a focus on missions.</span
+            >
+          </li>
+          <li
+            class="flex items-center text-lg md:text-4xl font-light text-black"
+          >
+            <svg
+              width="8"
+              height="8"
+              viewBox="0 0 8 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="4" cy="4" r="4" fill="black" />
+            </svg>
+            <span class="ml-4 md:ml-10">
+              Spanish and Closed Captioning supported on a large group of videos
+              as well.</span
+            >
+          </li>
+        </ul>
+        <div class="flex items-center mt-4 md:mt-10 flex-col md:flex-row">
+          <button
+            class="w-[175px] h-[56px] text-center rounded-full text-lg font-normal text-[#8A4D32] uppercase border-2 solid border-[#8A4D32] font-semibold uppercase hover:bg-[#8A4D32] hover:text-white transition duration-500 ease-in-out mt-6 md:ml-4"
+          >
+            register
+          </button>
+          <button
+            id="login"
+            class="w-[175px] h-[56px] text-center rounded-full text-lg font-normal text-[#8A4D32] uppercase border-2 solid border-[#8A4D32] font-semibold uppercase hover:bg-[#8A4D32] hover:text-white transition duration-500 ease-in-out mt-6 md:ml-4"
+          >
+            Login
+          </button>
+        </div>
+      </section>
+      <!-- Videos__popup__Hero-Videos -->
+    </main>
+    <!-- Footer -->
+    <footer class="pt-6 sm:pt-16 border-t solid border-[#f0f0f0]">
+      <div
+        class="grid sm:grid-cols-2 md:grid-cols-3 px-4 lg:px-[75px] mb-4 md:pb-9"
+      >
+        <div
+          class="col-span-1 flex flex-col sm:border-r solid border-[#f0f0f0] mb-4 md:mb-0"
+        >
+          <div class="mb-4 sm:mb-7">
+            <img
+              src="./assets/img/colored-logo.svg"
+              alt="App-Logo"
+              class="h-[30px] sm:h-auto"
+            />
+          </div>
+
+          <p class="text-[#3D3D3D] font-normal text-sm">
+            1445 N. Boonville Avenue Springfield, MO 65802-1894 <br />
+            Phone: 1-417-862-3420
+          </p>
+          <button
+            class="w-[150px] sm:w-[205px] h-[40px] sm:h-[56px] text-center rounded-full text-xs sm:text-lg text-[#8B3C3A] border-2 solid border-[#8B3C3A] font-semibold uppercase hover:bg-[#8B3C3A] hover:text-white transition duration-500 ease-in-out my-3 sm:my-6"
+          >
+            Are you called?
+          </button>
+          <p class="text-[10px] text-[#3D3D3D] font-normal">
+            © 2021 ASSEMBLIES OF GOD WORLD MISSIONS
+          </p>
+        </div>
+        <div
+          class="md:col-span-1 flex sm:justify-center md:border-r solid border-[#f0f0f0] my-1 md:my-0"
+        >
+          <ul>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Home</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">pray</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Give</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Go</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">About Us</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Resources</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]"
+                >Privacy & Permissions</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="flex flex-col w-full md:w-auto md:col-span-1 mx-auto my-2 sm:my-0"
+        >
+          <h6 class="text-sm font-normal text-[#3D3D3D] mb-3">Connect</h6>
+          <div class="flex items-center">
+            <div
+              class="bg-[#8B3C3A] rounded-md w-8 h-8 mr-4 flex justify-center items-center hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/facebook.svg" alt="facebook" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 mr-4 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/viemo.svg" alt="viemo" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 mr-4 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/youtube.svg" alt="Youtube" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/insta.svg" alt="Instagram" />
+            </div>
+          </div>
+          <button
+            class="w-[150px] sm:w-[205px] h-[40px] sm:h-[56px] text-center rounded-full text-sm sm:text-lg text-[#8B3C3A] border-2 solid border-[#8B3C3A] font-semibold uppercase hover:bg-[#8B3C3A] hover:text-white transition duration-500 ease-in-out mt-4 sm:my-6"
+          >
+            Get in Touch
+          </button>
+        </div>
+      </div>
+      <div class="w-full">
+        <img src="./assets/img/footer-logos.svg" alt="Logos" class="w-full" />
+      </div>
+    </footer>
+    <div
+      id="videosModal"
+      class="hidden pointer-events-none transition-all duration-500 ease-in-out w-full h-full fixed top-0 left-0 right-0 bottom-0 shadow-lg"
+      style="background-color: rgba(0, 0, 0, 0.8)"
+    >
+      <div class="scale_1 w-full h-full flex items-center justify-center">
+        <iframe
+          class="hero-video w-[1150px] h-[580px] rounded-md"
+          src="https://www.youtube.com/embed/iRYDYrj3Bfw"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <button
+        id="closeopenVideosModal"
+        class="absolute top-3 right-3 w-16 h-16"
+      >
+        <svg
+          width="56"
+          height="56"
+          viewBox="0 0 56 56"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M39.24 18.8799C38.07 17.7099 36.17 17.7099 35 18.8799L28.12 25.7599L21.24 18.8799C20.07 17.7099 18.17 17.7099 17 18.8799L25.94 27.8199L17 36.7599C18.17 37.9299 20.07 37.9299 21.24 36.7599L28.12 29.8799L35 36.7599C36.17 37.9299 38.07 37.9299 39.24 36.7599L30.3 27.8199L39.24 18.8799Z"
+            fill="white"
+          />
+        </svg>
+      </button>
+    </div>
+    <script type="text/javascript">
+      const video = document.querySelector(".hero-video");
+      //LoginButton
+      const LoginBtn = document.getElementById("login");
+
+      LoginBtn.addEventListener("click", () => {
+        console.log("workign Fine");
+      });
+
+      // VideosPage
+      const showVideosBtn = document.querySelectorAll("#showVideos");
+      const videosModal = document.getElementById("videosModal");
+      const closeopenVideosModal = document.getElementById(
+        "closeopenVideosModal"
+      );
+
+      showVideosBtn.forEach((el, i) => {
+        el.addEventListener("click", () => {
+          videosModal.classList.add("show");
+        });
+      });
+
+      //Close VideosModal
+      closeopenVideosModal.addEventListener("click", () => {
+        videosModal.classList.remove("show");
+      });
+
+      //  Search Icon
+      const searchBar = document.querySelector(".search__bar");
+      const searchIcon = document.querySelector(".search__icon");
+      const mySearch = document.querySelector("#my__search");
+      const clear = document.querySelector(".clear");
+
+      searchIcon.addEventListener("click", () => {
+        searchBar.classList.toggle("active");
+      });
+
+      clear.addEventListener("click", () => {
+        mySearch.value = "";
+        searchBar.classList.toggle("active");
+      });
+
+      // Toggle Language menu
+      const LangMenu = document.querySelector(".dropdown-select");
+      const dropDown = document.querySelector(".dropdown-menu");
+      const listText = document.querySelector(".selected");
+      const dropDownItem = document.querySelectorAll(".item");
+
+      LangMenu.addEventListener("click", () => {
+        LangMenu.classList.toggle("active");
+        dropDown.classList.toggle("active");
+        dropDownItem.forEach((item) => {
+          if (item.innerText === listText.innerText) {
+            item.classList.add("active-lang");
+          } else {
+            item.classList.remove("active-lang");
+          }
+        });
+      });
+
+      for (item of dropDownItem) {
+        item.addEventListener("click", showItem);
+      }
+      function showItem() {
+        event.preventDefault();
+
+        listText.innerHTML = this.textContent;
+        dropDown.classList.toggle("active");
+        LangMenu.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

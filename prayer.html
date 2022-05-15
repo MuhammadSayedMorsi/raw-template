@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <!-- TailwindCss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+            backgroundImage: {
+              "burger-menu": "url('./assets/img/berger-menu.svg')",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="w-full flex items-center justify-between px-4 lg:px-[83px] pt-[20px] sm:pt-[35px] absolute"
+    >
+      <div class="flex items-center">
+        <button
+          class="w-6 h-6 bg-[url('./assets/img/berger-menu.svg')] mr-4 lg:mr-[47px]"
+        ></button>
+
+        <div class="">
+          <!--  Custome drop down.. -->
+          <div class="dropdown relative">
+            <div
+              class="dropdown-select flex items-center cursor-pointer transition duration-500 ease-in-out"
+            >
+              <span
+                class="selected text-lg text-white uppercase font-normal mr-[12px]"
+                >EN</span
+              >
+              <span class="ml-1"
+                ><svg
+                  width="11"
+                  height="6"
+                  viewBox="0 0 11 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.5 6L0.73686 0.75L10.2631 0.75L5.5 6Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            <ul
+              class="opacity-0 pointer-events-none w-40 absolute top-6 z-50 dropdown-menu bg-white border solid border-[#e2e2e2] mt-2 rounded-md shadow-2xl scale-90 transition duration-500 ease-in-out"
+            >
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2 rounded-md"
+              >
+                EN
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2 rounded-md"
+              >
+                FR
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2"
+              >
+                DU
+              </li>
+              <li
+                class="item text-lg text-[#8d959f] border-b solid border-[#e2e2e2] cursor-pointer px-8 py-2"
+              >
+                AR
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="md:flex flex-col items-center w-[100px] md:w-[275px]">
+        <img src="./assets/img/app-logo.svg" alt="app-logo" class="" />
+        <span class="hidden md:inline-block text-sm text-white font-normal"
+          >Assemblies of God World Mission</span
+        >
+      </div>
+      <div class="hidden md:flex items-center relative">
+        <!-- Search Bar -->
+        <div class="relative cursor-pointer rounded-full mr-4 search__bar">
+          <span
+            class="search__icon inline-block absolute top-2 left-2 w-8 h-8 bg-center bg-[url('./assets/img/search.svg')] bg-no-repeat"
+          ></span>
+          <input
+            id="my__search"
+            class="h-full w-full outline-none border-none pl-12 pr-9 text-lg text-white font-semibold bg-transparent rounded-lg"
+            type="text"
+            placeholder="Search"
+          />
+          <div class="clear absolute right-2 top-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#fff"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- End Search Bar -->
+        <button
+          class="w-[211px] h-[56px] text-center rounded-full text-lg text-white border-2 solid border-white font-semibold uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out"
+        >
+          Are you called?
+        </button>
+      </div>
+    </nav>
+    <header
+      class="py-[100px] sm:h-[450px] md:h-[550px] lg:h-[733px] px-4 lg:p-0 bg-[url('./assets/img/prayer/hero.png')] bg-no-repeat bg-cover bg-center bg-unset flex items-start lg:items-center justify-center flex-col text-left lg:text-center"
+    >
+      <h3
+        class="text-[24px] sm:text-[48px] xl:text-[64px] text-white font-semibold sm:font-normal mb-1 lg:mb-[25px]"
+      >
+        Pray for battle with COVID-19
+      </h3>
+      <p class="text-white text-lg sm:text-2xl xl:text-3xl xl:w-[904px]">
+        "Peace I leave with you; my peace I give you. I do not give to you as
+        the world gives. <br class="hidden sm:inline" />
+        Do not let your hearts be troubled and do not be afraid.“ --John 14:27
+        NIV
+      </p>
+    </header>
+
+    <main class="w-full pt-6 lg:pt-[105px] pb-[60px] lg:pb-[146px]">
+      <!-- Pray Band -->
+      <section
+        class="w-full lg:h-[436px] bg-[#D7B549] flex items-center justify-center flex-col md:flex-row py-8 px-4 lg:py-0 lg:py-0"
+      >
+        <div
+          class="w-[250px] h-[250px] sm:w-[308px] sm:h-[308px] flex items-center justify-center bg-[#D7B549] rounded-full"
+        >
+          <img
+            src="./assets/img/prayer/prayerband.svg"
+            alt="give disaster logo"
+            class="w-11/12 h-11/12 lg:w-full lg:h-full"
+          />
+        </div>
+
+        <div class="md:pl-[64px] mt-4 md:pt-0 text-center md:text-left">
+          <h3
+            class="text-3xl lg:text-4xl xl:text-[48px] text-white font-semibold md:font-normal"
+          >
+            PrayBand
+          </h3>
+          <p class="text-sm text-normal text-white my-3 md:my-6 lg:w-[489px]">
+            A Pray Band is established with a prayer cell of three people. Each
+            prayer cell is given one Live Dead church planting team to pray for.
+
+            <br class="hidden sm:inline" />
+            <br class="hidden sm:inline" />
+
+            Sign up today and we will provide you with the resources to start a
+            Pray Band.
+          </p>
+          <button
+            class="w-[175px] h-[56px] bg-transparent rounded-full text-lg text-white font-normal uppercase border-2 solid border-white"
+          >
+            Sign up
+          </button>
+        </div>
+      </section>
+
+      <!-- Join us in Prayer slider -->
+      <section
+        class="pl-4 xl:pl-[92px] mt-[30px] md:mt-[62px] mb-[30px] md:mb-[103px] prayer_slider"
+      >
+        <div class="mb-6 lg:mb-16">
+          <h4
+            class="text-[24px] sm:text-[36px] md:text-[48px] xl:text-[64px] text-black font-normal"
+          >
+            Join us in Prayer
+          </h4>
+          <p
+            class="text-lg sm:text-xl md:text-2xl xl:text-4xl text-black font-normal"
+          >
+            Pray with us all over the world
+          </p>
+        </div>
+        <div class="swiper mySwiper h-[580px] md:h-[630px] relative">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide small__slide h-[454px] cursor-pointer border-2 solid border-[rgba(127, 167, 182, 0.22)] rounded-2xl flex items-center justify-center flex-col text-center px-[30px] lg:px-[48px]"
+            >
+              <div class="w-[110px] h-[110px]">
+                <img
+                  src="./assets/img/prayer/hand-above-for-pray.svg"
+                  alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+                  class="w-full h-full"
+                />
+              </div>
+              <p class="text-lg xl:text-2xl text-[#3D3D3D] font-normal mt-6">
+                Father, thank You that “Your name is a strong tower, where the
+                righteous can run to You and are safe” (Proverbs 18:10).
+              </p>
+            </div>
+
+            <div
+              class="swiper-slide small__slide h-[454px] cursor-pointer border-2 solid border-[rgba(127, 167, 182, 0.22)] rounded-2xl flex items-center justify-center flex-col text-center px-[30px] lg:px-[48px]"
+            >
+              <div class="w-[110px] h-[110px]">
+                <img
+                  src="./assets/img/prayer/hand-above-for-pray.svg"
+                  alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+                  class="w-full h-full"
+                />
+              </div>
+              <p class="text-lg xl:text-2xl text-[#3D3D3D] font-normal mt-6">
+                Father, thank You that “Your name is a strong tower, where the
+                righteous can run to You and are safe” (Proverbs 18:10).
+              </p>
+            </div>
+
+            <div
+              class="swiper-slide small__slide h-[454px] cursor-pointer border-2 solid border-[rgba(127, 167, 182, 0.22)] rounded-2xl flex items-center justify-center flex-col text-center px-[30px] lg:px-[48px]"
+            >
+              <div class="w-[110px] h-[110px]">
+                <img
+                  src="./assets/img/prayer/hand-above-for-pray.svg"
+                  alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+                  class="w-full h-full"
+                />
+              </div>
+              <p class="text-lg xl:text-2xl text-[#3D3D3D] font-normal mt-6">
+                Father, thank You that “Your name is a strong tower, where the
+                righteous can run to You and are safe” (Proverbs 18:10).
+              </p>
+            </div>
+
+            <div
+              class="swiper-slide small__slide h-[454px] cursor-pointer border-2 solid border-[rgba(127, 167, 182, 0.22)] rounded-2xl flex items-center justify-center flex-col text-center px-[30px] lg:px-[48px]"
+            >
+              <div class="w-[110px] h-[110px]">
+                <img
+                  src="./assets/img/prayer/hand-above-for-pray.svg"
+                  alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+                  class="w-full h-full"
+                />
+              </div>
+              <p class="text-lg xl:text-2xl text-[#3D3D3D] font-normal mt-6">
+                Father, thank You that “Your name is a strong tower, where the
+                righteous can run to You and are safe” (Proverbs 18:10).
+              </p>
+            </div>
+
+            <div
+              class="swiper-slide small__slide h-[454px] cursor-pointer border-2 solid border-[rgba(127, 167, 182, 0.22)] rounded-2xl flex items-center justify-center flex-col text-center px-[30px] lg:px-[48px]"
+            >
+              <div class="w-[110px] h-[110px]">
+                <img
+                  src="./assets/img/prayer/hand-above-for-pray.svg"
+                  alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+                  class="w-full h-full"
+                />
+              </div>
+              <p class="text-lg xl:text-2xl text-[#3D3D3D] font-normal mt-6">
+                Father, thank You that “Your name is a strong tower, where the
+                righteous can run to You and are safe” (Proverbs 18:10).
+              </p>
+            </div>
+          </div>
+          <div class="swiper-scrollbar"></div>
+          <div
+            class="give__arrows w-[200px] h-[80px] absolute bottom-[30px] md:bottom-[75px]"
+          >
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Social Prayer Feed  -->
+
+      <section class="pl-4 xl:pl-[92px] mb-[30px] social_prayer_feed">
+        <div class="mb-6 lg:mb-16">
+          <h4
+            class="text-[24px] sm:text-[36px] md:text-[48px] xl:text-[64px] text-black font-normal"
+          >
+            Social Prayer Feed
+          </h4>
+          <p
+            class="text-lg sm:text-xl md:text-2xl xl:text-4xl text-black font-normal"
+          >
+            Join our community, be part of us!
+          </p>
+        </div>
+        <div class="swiper mySwiper h-[660px] lg:h-[765px] relative">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide small__slide cursor-pointer text-center">
+              <div class="h-[439px]">
+                <img
+                  src="./assets/img/prayer/slider-pic-one.png"
+                  alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+                  class="w-full h-full rounded-lg"
+                />
+              </div>
+              <div class="mt-4 text-left">
+                <h5
+                  class="text-lg xl:text-2xl text-[#3D3D3D] font-normal mb-[20px]"
+                >
+                  A PRAYER REQUEST FROM THE SILK ROAD:
+                </h5>
+                <p class="text-base lg:text-lg text-[#3D3D3D] font-normal">
+                  There is a new believer in Turkey! Will you
+                  <br class="hidden xl:inline" />
+                  pray for heart transformation? Pray that she
+                  <br class="hidden xl:inline" />
+                  learns to rely on the Holy Spirit for strength
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide small__slide cursor-pointer text-center">
+              <div class="h-[439px]">
+                <img
+                  src="./assets/img/prayer/slider-pic-two.png"
+                  alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+                  class="w-full h-full rounded-lg"
+                />
+              </div>
+              <div class="mt-4 text-left">
+                <h5
+                  class="text-lg xl:text-2xl text-[#3D3D3D] font-normal mb-[20px]"
+                >
+                  A PRAYER REQUEST FROM THE SILK ROAD:
+                </h5>
+                <p class="text-base lg:text-lg text-[#3D3D3D] font-normal">
+                  There is a new believer in Turkey! Will you
+                  <br class="hidden xl:inline" />
+                  pray for heart transformation? Pray that she
+                  <br class="hidden xl:inline" />
+                  learns to rely on the Holy Spirit for strength
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide small__slide cursor-pointer text-center">
+              <div class="h-[439px]">
+                <img
+                  src="./assets/img/prayer/slider-pic-three.png"
+                  alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+                  class="w-full h-full rounded-lg"
+                />
+              </div>
+              <div class="mt-4 text-left">
+                <h5
+                  class="text-lg xl:text-2xl text-[#3D3D3D] font-normal mb-[20px]"
+                >
+                  Are you a part of a LD Pray Band?
+                </h5>
+                <p class="text-base lg:text-lg text-[#3D3D3D] font-normal">
+                  Pray Band is a simple prayer network
+                  <br class="hidden xl:inline" />
+
+                  that organizes, stabilizes, and multiplies
+                  <br class="hidden xl:inline" />
+
+                  prayer for Live Dead teams ...
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide small__slide cursor-pointer text-center">
+              <div class="h-[439px]">
+                <img
+                  src="./assets/img/prayer/slider-pic-four.png"
+                  alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+                  class="h-full w-full rounded-lg"
+                />
+              </div>
+              <div class="mt-4 text-left">
+                <h5
+                  class="text-lg xl:text-2xl text-[#3D3D3D] font-normal mb-[20px]"
+                >
+                  A PRAYER REQUEST FROM THE SILK ROAD:
+                </h5>
+                <p class="text-base lg:text-lg text-[#3D3D3D] font-normal">
+                  There is a new believer in Turkey! Will you
+                  <br class="hidden xl:inline" />
+
+                  pray for heart transformation? Pray that she
+                  <br class="hidden xl:inline" />
+
+                  learns to rely on the Holy Spirit for strength
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide small__slide cursor-pointer text-center">
+              <div class="h-[439px]">
+                <img
+                  src="./assets/img/prayer/slider-pic-one.png"
+                  alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+                  class="w-full h-full rounded-lg"
+                />
+              </div>
+              <div class="mt-4 text-left">
+                <h5
+                  class="text-lg xl:text-2xl text-[#3D3D3D] font-normal mb-[20px]"
+                >
+                  Are you a part of a LD Pray Band?
+                </h5>
+                <p class="text-base lg:text-lg text-[#3D3D3D] font-normal">
+                  Pray Band is a simple prayer network that organizes,
+                  <br class="hidden xl:inline" />
+                  stabilizes, and multiplies prayer for
+                  <br class="hidden xl:inline" />
+                  Live Dead teams ...
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide small__slide cursor-pointer text-center">
+              <div class="h-[439px]">
+                <img
+                  src="./assets/img/prayer/slider-pic-three.png"
+                  alt="The-Plaid-Zebra_Faces-Of-Africa.png"
+                  class="w-full h-full rounded-lg"
+                />
+              </div>
+              <div class="mt-4 text-left">
+                <h5
+                  class="text-lg xl:text-2xl text-[#3D3D3D] font-normal mb-[20px]"
+                >
+                  A PRAYER REQUEST FROM THE SILK ROAD:
+                </h5>
+                <p class="text-base lg:text-lg text-[#3D3D3D] font-normal">
+                  There is a new believer in Turkey! Will you
+                  <br class="hidden xl:inline" />
+                  pray for heart transformation? Pray that she
+                  <br class="hidden xl:inline" />
+                  learns to rely on the Holy Spirit for strength
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </section>
+
+      <!-- Follow Us for Urgent Prayer Requests -->
+      <section
+        class="mx-4 xl:mx-auto xl:w-[calc(100%-184px)] h-[400px] xl:h-[542px] mt-4 bg-[url('./assets/img/prayer/follow-us-cover.png')] bg-center bg-cover bg-no-repeat flex items-center justify-center flex-col rounded-2xl text-center px-4 sm:px-0"
+      >
+        <h3
+          class="text-[24px] sm:text-[30px] xl:text-[64px] text-white font-normal mb-4 lg:mb-[25px]"
+        >
+          Pray for battle with COVID-19
+        </h3>
+
+        <div class="flex justify-center items-center flex-col sm:flex-row">
+          <div
+            class="flex flex-col justify-center items-center sm:mr-[50px] lg:mr-[100px] mb-6 sm:mb-0"
+          >
+            <div
+              class="w-[60px] h-[60px] lg:w-[104px] lg:h-[104px] cursor-pointer hover:scale-105 transition duration-500 ease-in-out mb-4 lg:mb-6"
+            >
+              <img src="./assets/img/prayer/facebook.svg" alt="Facebook Logo" />
+            </div>
+            <span class="text-lg lg:text-2xl text-white font-normal">
+              Like us on Facebook
+            </span>
+          </div>
+          <div class="flex flex-col justify-center items-center">
+            <div
+              class="w-[60px] h-[60px] lg:w-[104px] lg:h-[104px] cursor-pointer hover:scale-105 transition duration-500 ease-in-out mb-4 lg:mb-6"
+            >
+              <img
+                src="./assets/img/prayer/insta-icon.svg"
+                alt="Facebook Logo"
+              />
+            </div>
+            <span class="text-lg lg:text-2xl text-white font-normal">
+              Follow us on Instagram
+            </span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="pt-6 sm:pt-16 border-t solid border-[#f0f0f0]">
+      <div
+        class="grid sm:grid-cols-2 md:grid-cols-3 px-4 lg:px-[75px] mb-4 md:pb-9"
+      >
+        <div
+          class="col-span-1 flex flex-col sm:border-r solid border-[#f0f0f0] mb-4 md:mb-0"
+        >
+          <div class="mb-4 sm:mb-7">
+            <img
+              src="./assets/img/colored-logo.svg"
+              alt="App-Logo"
+              class="h-[30px] sm:h-auto"
+            />
+          </div>
+
+          <p class="text-[#3D3D3D] font-normal text-sm">
+            1445 N. Boonville Avenue Springfield, MO 65802-1894 <br />
+            Phone: 1-417-862-3420
+          </p>
+          <button
+            class="w-[150px] sm:w-[205px] h-[40px] sm:h-[56px] text-center rounded-full text-xs sm:text-lg text-[#8B3C3A] border-2 solid border-[#8B3C3A] font-semibold uppercase hover:bg-[#8B3C3A] hover:text-white transition duration-500 ease-in-out my-3 sm:my-6"
+          >
+            Are you called?
+          </button>
+          <p class="text-[10px] text-[#3D3D3D] font-normal">
+            © 2021 ASSEMBLIES OF GOD WORLD MISSIONS
+          </p>
+        </div>
+        <div
+          class="md:col-span-1 flex sm:justify-center md:border-r solid border-[#f0f0f0] my-1 md:my-0"
+        >
+          <ul>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Home</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">pray</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Give</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Go</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">About Us</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]">Resources</a>
+            </li>
+            <li class="text-[#3D3D3D] text-sm font-normal mb-2">
+              <a href="#" class="hover:border-b border-[#3D3D3D]"
+                >Privacy & Permissions</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="flex flex-col w-full md:w-auto md:col-span-1 mx-auto my-2 sm:my-0"
+        >
+          <h6 class="text-sm font-normal text-[#3D3D3D] mb-3">Connect</h6>
+          <div class="flex items-center">
+            <div
+              class="bg-[#8B3C3A] rounded-md w-8 h-8 mr-4 flex justify-center items-center hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/facebook.svg" alt="facebook" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 mr-4 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/viemo.svg" alt="viemo" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 mr-4 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/youtube.svg" alt="Youtube" />
+            </div>
+            <div
+              class="flex items-center justify-center w-8 h-8 rounded-md hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            >
+              <img src="./assets/img/insta.svg" alt="Instagram" />
+            </div>
+          </div>
+          <button
+            class="w-[150px] sm:w-[205px] h-[40px] sm:h-[56px] text-center rounded-full text-sm sm:text-lg text-[#8B3C3A] border-2 solid border-[#8B3C3A] font-semibold uppercase hover:bg-[#8B3C3A] hover:text-white transition duration-500 ease-in-out mt-4 sm:my-6"
+          >
+            Get in Touch
+          </button>
+        </div>
+      </div>
+      <div class="w-full">
+        <img src="./assets/img/footer-logos.svg" alt="Logos" class="w-full" />
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript">
+      var swiper = new Swiper(".mySwiper", {
+        scrollbar: {
+          el: ".swiper-scrollbar",
+          // hide: true,
+        },
+        // slidesPerView: 3,
+        allowTouchMove: true,
+
+        breakpoints: {
+          // when window width is >= 320px
+          300: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          // when window width is >= 480px
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          // when window width is >= 640px
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      // Toggle Language menu
+      const LangMenu = document.querySelector(".dropdown-select");
+      const dropDown = document.querySelector(".dropdown-menu");
+      const listText = document.querySelector(".selected");
+      const dropDownItem = document.querySelectorAll(".item");
+
+      LangMenu.addEventListener("click", () => {
+        LangMenu.classList.toggle("active");
+        dropDown.classList.toggle("active");
+        dropDownItem.forEach((item) => {
+          if (item.innerText === listText.innerText) {
+            item.classList.add("active-lang");
+          } else {
+            item.classList.remove("active-lang");
+          }
+        });
+      });
+
+      for (item of dropDownItem) {
+        item.addEventListener("click", showItem);
+      }
+      function showItem() {
+        event.preventDefault();
+
+        listText.innerHTML = this.textContent;
+        dropDown.classList.toggle("active");
+        LangMenu.classList.toggle("active");
+      }
+
+      //  Search Icon
+      const searchBar = document.querySelector(".search__bar");
+      const searchIcon = document.querySelector(".search__icon");
+      const mySearch = document.querySelector("#my__search");
+      const clear = document.querySelector(".clear");
+
+      searchIcon.addEventListener("click", () => {
+        searchBar.classList.toggle("active");
+      });
+
+      clear.addEventListener("click", () => {
+        mySearch.value = "";
+        searchBar.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
